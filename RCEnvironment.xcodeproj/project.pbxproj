@@ -299,13 +299,15 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CURRENT_PROJECT_VERSION = 1.4;
 				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2003-2006 by Doug McClure";
+				INFOPLIST_KEY_NSMainNibFile = RCEnvironmentPref;
+				INFOPLIST_KEY_NSPrincipalClass = RCEnvironmentPref;
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
-				OTHER_LDFLAGS = (
-					"-bundle",
-					"-twolevel_namespace",
-				);
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rubicode.preferences.RCEnvironment;
 				PRODUCT_NAME = RCEnvironment;
 				WRAPPER_EXTENSION = prefPane;
@@ -362,13 +364,15 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CURRENT_PROJECT_VERSION = 1.4;
 				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2003-2006 by Doug McClure";
+				INFOPLIST_KEY_NSMainNibFile = RCEnvironmentPref;
+				INFOPLIST_KEY_NSPrincipalClass = RCEnvironmentPref;
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
-				OTHER_LDFLAGS = (
-					"-bundle",
-					"-twolevel_namespace",
-				);
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rubicode.preferences.RCEnvironment;
 				PRODUCT_NAME = RCEnvironment;
 				WRAPPER_EXTENSION = prefPane;

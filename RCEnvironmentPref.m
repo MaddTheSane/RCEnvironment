@@ -28,9 +28,9 @@
 #import "RCEnvironmentPref.h"
 #import "RCMacros.h"
 
-NSString *ENVIRONMENT_DIR = @".MacOSX";
-NSString *ENVIRONMENT_FILE = @"environment.plist";
-NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
+static NSString *const ENVIRONMENT_DIR = @".MacOSX";
+static NSString *const ENVIRONMENT_FILE = @"environment.plist";
+static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
 
 
 @interface NSFileManager (Extension)
@@ -127,9 +127,13 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
     
     if ( ![fileManager fileExistsAtPath:envFile isDirectory:&isDir] ) {
         if ( !isMainFile ) {
-            NSBeginAlertSheet(RCLocalizedString(@"FileError", @"File error"),
-			      nil, nil, nil, prefWindow, nil, nil, nil, nil,
-			      RCLocalizedString(@"FileDoesNotExist", @"File does not exist"), ENVIRONMENT_DIR, file);
+            NSAlert *alert = [[NSAlert alloc] init];
+            alert.messageText = RCLocalizedString(@"FileError", @"File error");
+            alert.informativeText = [NSString localizedStringWithFormat:RCLocalizedString(@"FileDoesNotExist", @"File does not exist"), ENVIRONMENT_DIR, file];
+            [alert beginSheetModalForWindow:prefWindow completionHandler:^(NSModalResponse returnCode) {
+                
+            }];
+            [alert autorelease];
         }
         else {
             [keyValueDataSource setDictionary:nil];
@@ -140,15 +144,23 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
         BOOL isError = NO;
 	
         if ( isDir ) {
-            NSBeginAlertSheet(RCLocalizedString(@"FileError", @"File error"),
-			      nil, nil, nil, prefWindow, nil, nil, nil, nil,
-                              RCLocalizedString(@"FileIsNotFile", @"File is not a file"), ENVIRONMENT_DIR, file);
+            NSAlert *alert = [[NSAlert alloc] init];
+            alert.messageText = RCLocalizedString(@"FileError", @"File error");
+            alert.informativeText = [NSString localizedStringWithFormat:RCLocalizedString(@"FileIsNotFile", @"File is not a file"), ENVIRONMENT_DIR, file];
+            [alert beginSheetModalForWindow:prefWindow completionHandler:^(NSModalResponse returnCode) {
+                
+            }];
+            [alert autorelease];
             isError = YES;
         }
         else if ( ![fileManager isReadableFileAtPath:envFile] ) {
-            NSBeginAlertSheet(RCLocalizedString(@"FileError", @"File error"),
-			      nil, nil, nil, prefWindow, nil, nil, nil, nil,
-                              RCLocalizedString(@"FileIsNotReadable", @"File is not readable"), ENVIRONMENT_DIR, file);
+            NSAlert *alert = [[NSAlert alloc] init];
+            alert.messageText = RCLocalizedString(@"FileError", @"File error");
+            alert.informativeText = [NSString localizedStringWithFormat:RCLocalizedString(@"FileIsNotReadable", @"File is not readable"), ENVIRONMENT_DIR, file];
+            [alert beginSheetModalForWindow:prefWindow completionHandler:^(NSModalResponse returnCode) {
+                
+            }];
+            [alert autorelease];
             isError = YES;
         }
         else {
@@ -185,21 +197,29 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
         NSString *backupFile = [envDir stringByAppendingPathComponent:ENVIRONMENT_BACKUP];
 	
         if ( ![fileManager fileExistsAtPath:envDir] ) {
-            [fileManager createDirectoryAtPath:envDir attributes:@{}];
+            [fileManager createDirectoryAtPath:envDir withIntermediateDirectories:YES attributes:nil error:NULL];
         }
 	
         // Remove backup file, ignore error if could not remove it, will deal with that below
-        [fileManager removeFileAtPath:backupFile handler:nil];
+        [fileManager removeItemAtPath:backupFile error:nil];
 	
-        if ( [fileManager fileExistsAtPath:envFile] && ![fileManager copyPath:envFile toPath:backupFile handler:nil] ) {
-            NSBeginAlertSheet(RCLocalizedString(@"BackupError", @"Backup file error"),
-			      nil, nil, nil, prefWindow, nil, nil, nil, nil,
-                              RCLocalizedString(@"BackupFileNotWritable", @"Backup error unable to write"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP);
+        if ( [fileManager fileExistsAtPath:envFile] && ![fileManager copyItemAtPath:envFile toPath:backupFile error:NULL] ) {
+            NSAlert *alert = [[NSAlert alloc] init];
+            alert.messageText = RCLocalizedString(@"BackupError", @"Backup file error");
+            alert.informativeText = [NSString localizedStringWithFormat:RCLocalizedString(@"BackupFileNotWritable", @"Backup error unable to write"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP];
+            [alert beginSheetModalForWindow:prefWindow completionHandler:^(NSModalResponse returnCode) {
+                
+            }];
+            [alert autorelease];
         }
         else if ( ![fileManager isCreatableFileAtPath:envFile] ) {
-            NSBeginAlertSheet(RCLocalizedString(@"FileError", @"File error"),
-			      nil, nil, nil, prefWindow, nil, nil, nil, nil,
-                              RCLocalizedString(@"FileNotWritable", @"File can not be written"), ENVIRONMENT_DIR, ENVIRONMENT_FILE);
+            NSAlert *alert = [[NSAlert alloc] init];
+            alert.messageText = RCLocalizedString(@"FileError", @"File error");
+            alert.informativeText = [NSString localizedStringWithFormat:RCLocalizedString(@"FileNotWritable", @"File can not be written"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP];
+            [alert beginSheetModalForWindow:prefWindow completionHandler:^(NSModalResponse returnCode) {
+                
+            }];
+            [alert autorelease];
         }
         else {
             [[keyValueDataSource dictionary] writeToFile:envFile atomically:NO];

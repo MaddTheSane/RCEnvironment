@@ -37,6 +37,17 @@
         }
       }
     },
+    "NSHumanReadableCopyright" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright © 2003-2006 by Doug McClure"
+          }
+        }
+      }
+    },
     "NSPrefPaneIconLabel" : {
       "comment" : "This is the name that shows up on the icon view main page",
       "extractionState" : "manual",

@@ -11,6 +11,14 @@
 
 @implementation RCKeyValuePair
 
+-(instancetype)init {
+    if (self = [super init]) {
+        key = @"";
+        value = @"";
+    }
+    return self;
+}
+
 + (RCKeyValuePair *)keyValuePairWithKey:(NSString *)aKey andValue:(NSString *)anObject
 {
     RCKeyValuePair *object = [[RCKeyValuePair alloc] init];
