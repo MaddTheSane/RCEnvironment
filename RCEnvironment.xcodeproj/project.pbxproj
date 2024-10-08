@@ -17,7 +17,7 @@
 		91D1DE2407514711001E0C2D /* RCKeyValuePair.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE1F07514711001E0C2D /* RCKeyValuePair.h */; };
 		91D1DE2507514711001E0C2D /* RCKeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE2007514711001E0C2D /* RCKeyValuePair.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		91D1DE2607514711001E0C2D /* RCMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE2107514711001E0C2D /* RCMacros.h */; };
-		91D1DE3707514923001E0C2D /* RCEnvironmentPref.nib in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2D07514923001E0C2D /* RCEnvironmentPref.nib */; };
+		91D1DE3707514923001E0C2D /* RCEnvironmentPref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2D07514923001E0C2D /* RCEnvironmentPref.xib */; };
 		91D1DE3807514923001E0C2D /* RCEnvironmentPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2E07514923001E0C2D /* RCEnvironmentPref.tiff */; };
 		91D1DE3907514923001E0C2D /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2F07514923001E0C2D /* README.rtf */; };
 		91D1DE4307514975001E0C2D /* AboutText.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE3F07514975001E0C2D /* AboutText.rtf */; };
@@ -39,7 +39,7 @@
 		91D1DE1F07514711001E0C2D /* RCKeyValuePair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCKeyValuePair.h; sourceTree = "<group>"; };
 		91D1DE2007514711001E0C2D /* RCKeyValuePair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCKeyValuePair.m; sourceTree = "<group>"; };
 		91D1DE2107514711001E0C2D /* RCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMacros.h; sourceTree = "<group>"; };
-		91D1DE2D07514923001E0C2D /* RCEnvironmentPref.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = RCEnvironmentPref.nib; sourceTree = "<group>"; };
+		91D1DE2D07514923001E0C2D /* RCEnvironmentPref.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RCEnvironmentPref.xib; sourceTree = "<group>"; };
 		91D1DE2E07514923001E0C2D /* RCEnvironmentPref.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = RCEnvironmentPref.tiff; sourceTree = "<group>"; };
 		91D1DE2F07514923001E0C2D /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		91D1DE4007514975001E0C2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/AboutText.rtf; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 			children = (
 				552C1EB52CB53B5C00F3B6E4 /* Images.xcassets */,
 				91D1DED907514C8C001E0C2D /* Images */,
-				91D1DE2D07514923001E0C2D /* RCEnvironmentPref.nib */,
+				91D1DE2D07514923001E0C2D /* RCEnvironmentPref.xib */,
 				8D202CF70486D31800D8A456 /* Info.plist */,
 				91D1DE3F07514975001E0C2D /* AboutText.rtf */,
 				91D1DE2F07514923001E0C2D /* README.rtf */,
@@ -207,7 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				552C1EB62CB53B5C00F3B6E4 /* Images.xcassets in Resources */,
-				91D1DE3707514923001E0C2D /* RCEnvironmentPref.nib in Resources */,
+				91D1DE3707514923001E0C2D /* RCEnvironmentPref.xib in Resources */,
 				91D1DE3807514923001E0C2D /* RCEnvironmentPref.tiff in Resources */,
 				91D1DE3907514923001E0C2D /* README.rtf in Resources */,
 				552C1EB22CB5377E00F3B6E4 /* InfoPlist.xcstrings in Resources */,
