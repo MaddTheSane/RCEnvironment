@@ -12,7 +12,9 @@
 #import <AppKit/NSText.h>
 #import <AppKit/NSTextField.h>
 
-extern NSString * const RCKeyValueDataSourceChangedNotification;
+extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
+
+@class RCKeyValuePair;
 
 @interface RCKeyValueDataSource : NSObject
 {
@@ -29,7 +31,7 @@ extern NSString * const RCKeyValueDataSourceChangedNotification;
 @private
     NSWindow *prefWindow;
 
-    NSMutableArray *values;
+    NSMutableArray<RCKeyValuePair*> *values;
 
     NSString *bundleIdentifier;
 	

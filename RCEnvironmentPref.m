@@ -101,7 +101,7 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
 {
     [saveButton setEnabled:isDocumentDirty];
     
-    int selectedRows = [tableView numberOfSelectedRows];
+    NSInteger selectedRows = [tableView numberOfSelectedRows];
     [removeButton setEnabled:(selectedRows > 0)];
     [inspectButton setEnabled:(selectedRows == 1)];
     
@@ -185,7 +185,7 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
         NSString *backupFile = [envDir stringByAppendingPathComponent:ENVIRONMENT_BACKUP];
 	
         if ( ![fileManager fileExistsAtPath:envDir] ) {
-            [fileManager createDirectoryAtPath:envDir attributes:nil];
+            [fileManager createDirectoryAtPath:envDir attributes:@{}];
         }
 	
         // Remove backup file, ignore error if could not remove it, will deal with that below

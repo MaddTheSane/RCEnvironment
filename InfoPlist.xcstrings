@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleName" : {
+      "comment" : "This is the name that shows up in the menu",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umgebungsvariablen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Environment Variables"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variabili Ambiente"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "环境变量"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "環境變數"
+          }
+        }
+      }
+    },
+    "NSPrefPaneIconLabel" : {
+      "comment" : "This is the name that shows up on the icon view main page",
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umgebungsvariablen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Environment\nVariables"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variabili\nAmbiente"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "环境\n变量"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "環境\n變數"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

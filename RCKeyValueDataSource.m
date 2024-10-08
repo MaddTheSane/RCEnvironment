@@ -128,7 +128,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 
 - (NSUInteger)indexOfKey:(NSString *)aKey
 {
-    int i = 0, count = [values count];
+    NSInteger i = 0, count = [values count];
     
     for ( ; i < count; i++ ) {
         if ( [[[values objectAtIndex:i] key] isEqualToString:aKey] ) {
