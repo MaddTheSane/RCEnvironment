@@ -5,6 +5,7 @@
 //  Created by Doug McClure on Wed May 08 2002.
 //
 
+#import <Cocoa/Cocoa.h>
 #import <PreferencePanes/PreferencePanes.h>
 #import "RCKeyValueDataSource.h"
 

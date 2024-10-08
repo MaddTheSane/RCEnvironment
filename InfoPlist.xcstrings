@@ -50,25 +50,25 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Environment\nVariables"
+            "value" : "Environment Variables"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Variabili\nAmbiente"
+            "value" : "Variabili Ambiente"
           }
         },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "环境\n变量"
+            "value" : "环境变量"
           }
         },
         "zh_TW" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "環境\n變數"
+            "value" : "環境變數"
           }
         }
       }

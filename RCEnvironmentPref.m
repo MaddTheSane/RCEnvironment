@@ -42,7 +42,7 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
 
 - (void)mainViewDidLoad
 {    
-    envDir = [[NSHomeDirectory() stringByAppendingPathComponent:ENVIRONMENT_DIR] retain];
+    envDir = [[NSHomeDirectory() stringByAppendingPathComponent:ENVIRONMENT_DIR] copy];
     
     [super mainViewDidLoad];
     

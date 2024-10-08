@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface RCKeyValuePair : NSObject {
     NSString *key;
@@ -22,3 +23,5 @@
 - (NSComparisonResult)compare:(RCKeyValuePair *)anotherPair;
 
 @end
+
+NS_ASSUME_NONNULL_END

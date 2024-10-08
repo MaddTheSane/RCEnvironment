@@ -5,12 +5,7 @@
 //  Created by Doug McClure on Thu May 09 2002.
 //
 
-#import <Foundation/Foundation.h>
-#import <AppKit/NSNibDeclarations.h>
-#import <AppKit/NSTableView.h>
-#import <AppKit/NSButton.h>
-#import <AppKit/NSText.h>
-#import <AppKit/NSTextField.h>
+#import <Cocoa/Cocoa.h>
 
 extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
 
@@ -19,10 +14,10 @@ extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
 
 @interface RCKeyValueDataSource : NSObject <NSTableViewDataSource>
 {
-    // This can be directly hooked up to an NSTableView in IB
-    IBOutlet NSTableView *tableView;
+    //! This can be directly hooked up to an NSTableView in IB
+    NSTableView *tableView;
 	
-    // The inspector window
+    //! The inspector window
     IBOutlet NSWindow *inspectWindow;
     
     // Fields on the inspector window
@@ -39,13 +34,13 @@ extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
     NSInteger editRow;
 }
 
-- (void)setBundleIdentifier:(NSString *)bundleIdentifier;
+@property (copy) NSString *bundleIdentifier;
 
-- (void)setTableView:(NSTableView *)aTableView;
-- (NSTableView *)tableView;
+//! This can be directly hooked up to an NSTableView in IB
+@property (nonatomic, retain) IBOutlet NSTableView *tableView;
 
-- (void)setDictionary:(NSDictionary *)aDictionary;
-- (NSDictionary *)dictionary;
+- (void)setDictionary:(NSDictionary<NSString*,NSString*> *)aDictionary;
+@property (nonatomic, copy) NSDictionary<NSString*,NSString*> *dictionary;
 
 - (IBAction)addItem:(id)sender;
 - (IBAction)removeItems:(id)sender;
