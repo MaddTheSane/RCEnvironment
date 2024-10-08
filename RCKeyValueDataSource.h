@@ -15,8 +15,9 @@
 extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
 
 @class RCKeyValuePair;
+@protocol RCKeyValueDataSourceDelegate;
 
-@interface RCKeyValueDataSource : NSObject
+@interface RCKeyValueDataSource : NSObject <NSTableViewDataSource>
 {
     // This can be directly hooked up to an NSTableView in IB
     IBOutlet NSTableView *tableView;
@@ -35,7 +36,7 @@ extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
 
     NSString *bundleIdentifier;
 	
-    int editRow;
+    NSInteger editRow;
 }
 
 - (void)setBundleIdentifier:(NSString *)bundleIdentifier;
@@ -54,7 +55,7 @@ extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
 @end
 
 
-@interface RCKeyValueDataSourceDelegate
+@protocol RCKeyValueDataSourceDelegate <NSObject>
 - (BOOL)keyValueDataSource:(RCKeyValueDataSource *)source willSetKeyToString:(NSString *)key;
 - (BOOL)keyValueDataSource:(RCKeyValueDataSource *)source willSetValueToString:(NSString *)value;
 @end

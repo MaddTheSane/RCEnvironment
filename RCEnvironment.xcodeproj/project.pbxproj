@@ -15,7 +15,7 @@
 		91D1DE2207514711001E0C2D /* RCKeyValueDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */; };
 		91D1DE2307514711001E0C2D /* RCKeyValueDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE1E07514711001E0C2D /* RCKeyValueDataSource.m */; };
 		91D1DE2407514711001E0C2D /* RCKeyValuePair.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE1F07514711001E0C2D /* RCKeyValuePair.h */; };
-		91D1DE2507514711001E0C2D /* RCKeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE2007514711001E0C2D /* RCKeyValuePair.m */; };
+		91D1DE2507514711001E0C2D /* RCKeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE2007514711001E0C2D /* RCKeyValuePair.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		91D1DE2607514711001E0C2D /* RCMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE2107514711001E0C2D /* RCMacros.h */; };
 		91D1DE3707514923001E0C2D /* RCEnvironmentPref.nib in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2D07514923001E0C2D /* RCEnvironmentPref.nib */; };
 		91D1DE3807514923001E0C2D /* RCEnvironmentPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2E07514923001E0C2D /* RCEnvironmentPref.tiff */; };
@@ -70,19 +70,21 @@
 			children = (
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				089C167CFE841241C02AAC07 /* Resources */,
-				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				089C1671FE841209C02AAC07 /* Frameworks */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
 			);
 			name = RCEnvironment;
 			sourceTree = "<group>";
 		};
-		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+		089C1671FE841209C02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
-				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+				F506C035013D953901CA16C8 /* PreferencePanes.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
 			);
-			name = "Frameworks and Libraries";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		089C167CFE841241C02AAC07 /* Resources */ = {
@@ -114,24 +116,6 @@
 			name = Classes;
 			sourceTree = "<group>";
 			usesTabs = 0;
-		};
-		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
-				F506C035013D953901CA16C8 /* PreferencePanes.framework */,
-			);
-			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
-		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				089C1672FE841209C02AAC07 /* Foundation.framework */,
-				089C167FFE841241C02AAC07 /* AppKit.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
 		};
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
@@ -313,6 +297,7 @@
 		916A67591065D88A00578E7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = Info.plist;
@@ -375,6 +360,7 @@
 		916A675B1065D89200578E7C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = Info.plist;

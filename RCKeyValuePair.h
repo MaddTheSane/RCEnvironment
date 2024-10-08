@@ -16,11 +16,8 @@
 
 + (RCKeyValuePair *)keyValuePairWithKey:(NSString *)aKey andValue:(NSString *)anObject;
 
-- (NSString *)key;
-- (void)setKey:(NSString *)aKey;
-
-- (NSString *)value;
-- (void)setValue:(NSString *)anObject;
+@property (copy) NSString *key;
+@property (copy) NSString *value;
 
 - (NSComparisonResult)compare:(RCKeyValuePair *)anotherPair;
 

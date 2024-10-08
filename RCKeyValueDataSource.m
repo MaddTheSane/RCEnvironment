@@ -115,7 +115,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
     
     // Non-Panther code
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-    NSEnumerator *enumerator = [values objectEnumerator];
+    NSEnumerator<RCKeyValuePair*> *enumerator = [values objectEnumerator];
     RCKeyValuePair *pair;
     
     while ( pair = (RCKeyValuePair *)[enumerator nextObject] ) {
@@ -174,15 +174,15 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         NSArray *selectedRows = [[tableView selectedRowEnumerator] allObjects];
         
         if ( [selectedRows count] > 0 ) {
-            int count = [selectedRows count];
-            NSUInteger indices[count];
-            int i;
+            NSInteger count = [selectedRows count];
+            NSMutableIndexSet *idxSet = [NSMutableIndexSet indexSet];
+            NSInteger i;
             
             for (i = 0; i < count; i++) {
-                indices[i] = [[selectedRows objectAtIndex:i] intValue];
+                [idxSet addIndex:[[selectedRows objectAtIndex:i] integerValue]];
             }
             
-            [values removeObjectsFromIndices:indices numIndices:count];
+            [values removeObjectsAtIndexes:idxSet];
             
             [tableView reloadData];
             
@@ -336,7 +336,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 }
 
 // Close the warning sheet, and write a default for whether to continue warning on this
-- (void)_alertSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
+- (void)_alertSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
     if ( returnCode == NSAlertAlternateReturn ) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:(NSString *)contextInfo];
