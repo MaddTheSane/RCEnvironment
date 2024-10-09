@@ -1,0 +1,115 @@
+/*===== TAB LABELS */
+
+/* Environement tab label */
+Environment = "Umgebung";
+
+/* About tab label */
+About = "Über";
+
+
+/*===== BUTTON LABELS */
+
+/* Load Backup button label */
+LoadBackup = "Backup laden";
+
+/* Save button label */
+Save = "Speichern";
+
+/* Revert button label */
+Revert = "Löschen";
+
+/* Cancel button label */
+Cancel = "Abbrechen";
+
+/* Continue label */
+Continue = "Fortsetzen";
+
+/* Don't show again label */
+DontShowAgain = "Nicht erneut zeigen";
+
+
+/*===== TABLE LABELS */
+
+/* Variable column label */
+Variable = "Variable";
+
+/* Value column label */
+Value = "Wert";
+
+
+/*===== DEFAULT VALUE TEXT */
+
+/* Default key label */
+DefaultKey = "Schlüssel";
+
+/* Default value label */
+DefaultValue = "Wert";
+
+
+/*===== ERROR PANEL TITLES */
+
+/* Value warning label */
+ValueWarning = "Warnung: Wert";
+
+/* File error label */
+FileError = "Datei Fehler";
+
+/* Backup error label */
+BackupError = "Backup Fehler";
+
+/* Invalid Key label */
+InvalidKey = "Ungültiger Schlüssel";
+
+/* Key Warning label */
+KeyWarning = "Warnung: Schlüssel";
+
+
+/*===== ERROR STRINGS */
+
+/* File does not exist format string, format string */
+FileDoesNotExist = "~/%@/%@ existiert nicht, kann nicht geladen werden.";
+
+/* File error: Is not a file, format string */
+FileIsNotFile = "~/%@/%@ ist ein Verzeichnis, keine Datei.";
+
+/* File error: Is not readable, format string */
+FileIsNotReadable = "~/%@/%@ ist nicht lesbar.";
+
+/* File error: Can not write file */
+FileNotWritable = "In ~/%@/%@ kann nicht geschrieben werden. Bitte verbessern und erneut versuchen.";
+
+/* Backup error unable to write file, format string */
+BackupFileNotWritable = "Backup kann nicht geschrieben werden ~/%@/%@. Bitte verbessern und erneut versuchen.";
+
+/* Invalid Key, non-zero length */
+ZeroLengthKey = "Schlüssel muss länger als Null Zeichen sein.";
+
+/* Invalid key, already exists */
+KeyExists = "Schlüssel existiert bereits.";
+
+/* Key warning, PATH variables can be bad */
+PathKeyWarning = "Beachten Sie, dass die Einstellung der PFAD-Umgebungsvariable bestimmte Anwendungen drastisch beeinflussen kann, besonders Entwicklerhilfsmittel und die Shellumgebung, Funktion.";
+
+/* Value warning, $ variables aren't expanded */
+DollarValueWarning = "Beachten Sie, dass $<identifier> Werte nicht erweitert werden, wenn die Umgebungsvariablendatei gelesen wird.";
+
+
+/*===== MISC LABELS */
+
+/* Warning about changes taking effect on next login */
+NextLoginWarning = "Änderungen werden nach den nächsten Login wirksam.";
+
+/* Edit variable label */
+EditVariable = "Variable bearbeiten:";
+
+
+/*===== TOOL TIPS */
+
+/* Add item */
+AddItemTip = "Variable hinzufügen";
+
+/* Remove item(s) */
+RemoveItemTip = "Variable entfernen";
+
+/* Edit variable value */
+EditItemTip = "Variablenwert bearbeiten";

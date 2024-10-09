@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 45;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D202CEA0486D31800D8A456 /* RCEnvironment_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA20370C41700C91783 /* RCEnvironment_Prefix.pch */; };
 		8D202CED0486D31800D8A456 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D202CF30486D31800D8A456 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
@@ -32,42 +31,14 @@
 		91D1DE5307514A09001E0C2D /* RCEnvironmentPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildStyle section */
-		06F27B30FFEEEFEF11CA0E56 /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				MACOSX_DEPLOYMENT_TARGET = 10.1;
-				OPTIMIZATION_CFLAGS = "-O0";
-				ZERO_LINK = YES;
-			};
-			name = Development;
-		};
-		06F27B31FFEEEFEF11CA0E56 /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.1;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
-
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		32DBCFA20370C41700C91783 /* RCEnvironment_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCEnvironment_Prefix.pch; sourceTree = "<group>"; };
 		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* RCEnvironment.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCEnvironment.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B50A5E1065EADC00338AB0 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
 		91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = RCKeyValueDataSource.h; sourceTree = "<group>"; };
 		91D1DE1E07514711001E0C2D /* RCKeyValueDataSource.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = RCKeyValueDataSource.m; sourceTree = "<group>"; };
 		91D1DE1F07514711001E0C2D /* RCKeyValuePair.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = RCKeyValuePair.h; sourceTree = "<group>"; };
@@ -96,6 +67,8 @@
 		91D1DE4F075149CF001E0C2D /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = zh_TW.lproj/Localizable.strings; sourceTree = "<group>"; };
 		91D1DE5007514A09001E0C2D /* RCEnvironmentPref.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = RCEnvironmentPref.h; sourceTree = "<group>"; };
 		91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = RCEnvironmentPref.m; sourceTree = "<group>"; };
+		D3775A8910660F6600D6D5D6 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = German; path = German.lproj/AboutText.rtf; sourceTree = "<group>"; };
+		D3775A8B10660F7900D6D5D6 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F506C035013D953901CA16C8 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				08FB77AFFE84173DC02AAC07 /* Classes */,
-				32DBCFA10370C40200C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
@@ -187,14 +159,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		32DBCFA10370C40200C91783 /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				32DBCFA20370C41700C91783 /* RCEnvironment_Prefix.pch */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
 		91D1DED907514C8C001E0C2D /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +181,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D202CEA0486D31800D8A456 /* RCEnvironment_Prefix.pch in Headers */,
 				91D1DE2207514711001E0C2D /* RCKeyValueDataSource.h in Headers */,
 				91D1DE2407514711001E0C2D /* RCKeyValuePair.h in Headers */,
 				91D1DE2607514711001E0C2D /* RCMacros.h in Headers */,
@@ -240,35 +203,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = RCEnvironment_Prefix.pch;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = Bundle;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-bundle",
-					"-twolevel_namespace",
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = RCEnvironment;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = prefPane;
-			};
 			dependencies = (
 			);
 			name = RCEnvironment;
@@ -282,13 +216,11 @@
 /* Begin PBXProject section */
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 9163AF7A09AB7D8C0031FE43 /* Build configuration list for PBXProject "RCEnvironment" */;
-			buildSettings = {
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 			};
-			buildStyles = (
-				06F27B30FFEEEFEF11CA0E56 /* Development */,
-				06F27B31FFEEEFEF11CA0E56 /* Deployment */,
-			);
+			buildConfigurationList = 9163AF7A09AB7D8C0031FE43 /* Build configuration list for PBXProject "RCEnvironment" */;
+			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -301,6 +233,7 @@
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* RCEnvironment */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				8D202CE80486D31800D8A456 /* RCEnvironment */,
 			);
@@ -361,6 +294,7 @@
 				91D1DE480751499F001E0C2D /* Italian */,
 				91D1DE4B075149B5001E0C2D /* zh_CN */,
 				91D1DE4E075149CF001E0C2D /* zh_TW */,
+				D3775A8B10660F7900D6D5D6 /* German */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -372,6 +306,7 @@
 				91D1DE470751499F001E0C2D /* Italian */,
 				91D1DE4A075149B5001E0C2D /* zh_CN */,
 				91D1DE4D075149CF001E0C2D /* zh_TW */,
+				D3775A8910660F6600D6D5D6 /* German */,
 			);
 			name = AboutText.rtf;
 			sourceTree = "<group>";
@@ -383,6 +318,7 @@
 				91D1DE490751499F001E0C2D /* Italian */,
 				91D1DE4C075149B5001E0C2D /* zh_CN */,
 				91D1DE4F075149CF001E0C2D /* zh_TW */,
+				91B50A5E1065EADC00338AB0 /* German */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -390,148 +326,102 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9163AF7709AB7D8C0031FE43 /* Development */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = RCEnvironment_Prefix.pch;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.1;
-				OPTIMIZATION_CFLAGS = "-O0";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-bundle",
-					"-twolevel_namespace",
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = RCEnvironment;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = prefPane;
-				ZERO_LINK = YES;
-			};
-			name = Development;
-		};
-		9163AF7809AB7D8C0031FE43 /* Deployment */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = RCEnvironment_Prefix.pch;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.1;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-bundle",
-					"-twolevel_namespace",
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = RCEnvironment;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = prefPane;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
 		9163AF7909AB7D8C0031FE43 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = RCEnvironment_Prefix.pch;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.1;
-				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-bundle",
 					"-twolevel_namespace",
 				);
-				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = RCEnvironment;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Default;
-		};
-		9163AF7B09AB7D8C0031FE43 /* Development */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.1;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-			};
-			name = Development;
-		};
-		9163AF7C09AB7D8C0031FE43 /* Deployment */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.1;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-			};
-			name = Deployment;
 		};
 		9163AF7D09AB7D8C0031FE43 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"GCC_ENABLE_OBJC_GC[sdk=macosx10.5][arch=*]" = supported;
+				GCC_VERSION = 4.0;
+				"GCC_VERSION[sdk=macosx10.5][arch=*]" = 4.2;
+				"GCC_VERSION[sdk=macosx10.6][arch=*]" = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.1;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				"MACOSX_DEPLOYMENT_TARGET[arch=i386]" = 10.4;
+				"MACOSX_DEPLOYMENT_TARGET[arch=x86_64]" = 10.5;
+				SDKROOT = macosx10.4;
+				"SDKROOT[arch=x86_64]" = macosx10.5;
+				VALID_ARCHS = "x86_64 i386 ppc";
 			};
 			name = Default;
+		};
+		916A67581065D88A00578E7C /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"GCC_ENABLE_OBJC_GC[sdk=macosx10.5][arch=*]" = supported;
+				GCC_VERSION = 4.0;
+				"GCC_VERSION[sdk=macosx10.5][arch=*]" = 4.2;
+				"GCC_VERSION[sdk=macosx10.6][arch=*]" = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.1;
+				"MACOSX_DEPLOYMENT_TARGET[arch=i386]" = 10.4;
+				"MACOSX_DEPLOYMENT_TARGET[arch=x86_64]" = 10.5;
+				SDKROOT = macosx10.4;
+				"SDKROOT[arch=x86_64]" = macosx10.5;
+				VALID_ARCHS = "x86_64 i386 ppc";
+			};
+			name = Development;
+		};
+		916A67591065D88A00578E7C /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				OTHER_LDFLAGS = (
+					"-bundle",
+					"-twolevel_namespace",
+				);
+				PRODUCT_NAME = RCEnvironment;
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Development;
+		};
+		916A675A1065D89200578E7C /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				"GCC_ENABLE_OBJC_GC[sdk=macosx10.5][arch=*]" = supported;
+				GCC_VERSION = 4.0;
+				"GCC_VERSION[sdk=macosx10.5][arch=*]" = 4.2;
+				"GCC_VERSION[sdk=macosx10.6][arch=*]" = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.1;
+				"MACOSX_DEPLOYMENT_TARGET[arch=i386]" = 10.4;
+				"MACOSX_DEPLOYMENT_TARGET[arch=x86_64]" = 10.5;
+				SDKROOT = macosx10.4;
+				"SDKROOT[arch=x86_64]" = macosx10.5;
+				VALID_ARCHS = "x86_64 i386 ppc";
+			};
+			name = Deployment;
+		};
+		916A675B1065D89200578E7C /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				OTHER_LDFLAGS = (
+					"-bundle",
+					"-twolevel_namespace",
+				);
+				PRODUCT_NAME = RCEnvironment;
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Deployment;
 		};
 /* End XCBuildConfiguration section */
 
@@ -539,9 +429,9 @@
 		9163AF7609AB7D8C0031FE43 /* Build configuration list for PBXNativeTarget "RCEnvironment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9163AF7709AB7D8C0031FE43 /* Development */,
-				9163AF7809AB7D8C0031FE43 /* Deployment */,
 				9163AF7909AB7D8C0031FE43 /* Default */,
+				916A67591065D88A00578E7C /* Development */,
+				916A675B1065D89200578E7C /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;
@@ -549,9 +439,9 @@
 		9163AF7A09AB7D8C0031FE43 /* Build configuration list for PBXProject "RCEnvironment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9163AF7B09AB7D8C0031FE43 /* Development */,
-				9163AF7C09AB7D8C0031FE43 /* Deployment */,
 				9163AF7D09AB7D8C0031FE43 /* Default */,
+				916A67581065D88A00578E7C /* Development */,
+				916A675A1065D89200578E7C /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;

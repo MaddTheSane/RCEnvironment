@@ -126,7 +126,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 }
 
 
-- (unsigned)indexOfKey:(NSString *)aKey
+- (NSUInteger)indexOfKey:(NSString *)aKey
 {
     int i = 0, count = [values count];
     
@@ -175,7 +175,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         
         if ( [selectedRows count] > 0 ) {
             int count = [selectedRows count];
-            unsigned indices[count];
+            NSUInteger indices[count];
             int i;
             
             for (i = 0; i < count; i++) {
@@ -257,18 +257,18 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 
 // Table datasource methods
 
-- (int)numberOfRowsInTableView:(NSTableView *)aTableView
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
     return [values count];
 }
 
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(int)rowIndex
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex
 {
     RCKeyValuePair *data = [values objectAtIndex:rowIndex];
     return [[tableColumn identifier] isEqual:KEY_COLUMN_ID] ? [data key] : [data value];
 }
 
-- (void)tableView:(NSTableView *)tableView setObjectValue:(id)objectValue forTableColumn:(NSTableColumn *)tableColumn row:(int)rowIndex
+- (void)tableView:(NSTableView *)tableView setObjectValue:(id)objectValue forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex
 {
     if (objectValue == nil) {
         objectValue = @"";
