@@ -12,18 +12,12 @@
                 <outlet property="aboutField" destination="258" id="281"/>
                 <outlet property="addButton" destination="333" id="366"/>
                 <outlet property="backupButton" destination="268" id="280"/>
-                <outlet property="editButton" destination="338" id="368"/>
                 <outlet property="inspectButton" destination="338" id="370"/>
-                <outlet property="inspectTitle" destination="351" id="365"/>
                 <outlet property="keyValueDataSource" destination="140" id="144"/>
-                <outlet property="nextLoginField" destination="264" id="310"/>
                 <outlet property="removeButton" destination="334" id="367"/>
-                <outlet property="revertButton" destination="319" id="322"/>
-                <outlet property="saveButton" destination="320" id="325"/>
+                <outlet property="saveButton" destination="sFs-Dq-jhv" id="325"/>
                 <outlet property="tabView" destination="225" id="286"/>
                 <outlet property="tableView" destination="269" id="373"/>
-                <outlet property="valueColumn" destination="265" id="306"/>
-                <outlet property="variableColumn" destination="270" id="305"/>
                 <outlet property="versionField" destination="253" id="277"/>
             </connections>
         </customObject>
@@ -62,7 +56,7 @@
                                             <rect key="frame" x="76" y="-2" width="173" height="30"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" title="Changes will take effect on your next login." id="375">
-                                                <font key="font" usesAppearanceFont="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
