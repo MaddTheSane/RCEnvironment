@@ -7,15 +7,17 @@
 	<key>CFBundleExecutable</key>
 	<string>RCEnvironment</string>
 	<key>CFBundleGetInfoString</key>
-	<string>1.2</string>
+	<string>1.2.1</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.prefpanel</string>
+	<string>com.rubicode.preferences.RCEnvironment</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.2.1</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2003-2004 by Doug McClure</string>
 	<key>NSMainNibFile</key>

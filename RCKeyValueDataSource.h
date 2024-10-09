@@ -18,13 +18,13 @@ extern NSString * const RCKeyValueDataSourceChangedNotification;
 {
     // This can be directly hooked up to an NSTableView in IB
     IBOutlet NSTableView *tableView;
-	IBOutlet NSButton *removeButton;
-	IBOutlet NSButton *inspectButton;
 	
-	IBOutlet NSWindow *inspectWindow;
+    // The inspector window
+    IBOutlet NSWindow *inspectWindow;
     
-	IBOutlet NSTextField *editKey;
-	IBOutlet NSText *editValue;
+    // Fields on the inspector window
+    IBOutlet NSTextField *editKey;
+    IBOutlet NSText *editValue;
 
 @private
     NSWindow *prefWindow;
@@ -33,7 +33,7 @@ extern NSString * const RCKeyValueDataSourceChangedNotification;
 
     NSString *bundleIdentifier;
 	
-	int editRow;
+    int editRow;
 }
 
 - (void)setBundleIdentifier:(NSString *)bundleIdentifier;

@@ -18,8 +18,8 @@
  * ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
  * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
  * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+			  * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+			  * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
  * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
@@ -43,19 +43,15 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
 - (void)mainViewDidLoad
 {    
     envDir = [[NSHomeDirectory() stringByAppendingPathComponent:ENVIRONMENT_DIR] retain];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyValueDataSourceDidChange:)
-                                                 name:RCKeyValueDataSourceChangedNotification
-                                               object:keyValueDataSource];
+    
     [super mainViewDidLoad];
-
+    
     NSBundle *myBundle = [NSBundle bundleForClass:[self class]];
     
     NSDictionary *infoDictionary = [myBundle infoDictionary];
     [keyValueDataSource setBundleIdentifier:[infoDictionary objectForKey:@"CFBundleIdentifier"]];
-    [versionField setStringValue:[infoDictionary objectForKey:@"CFBundleShortVersionString"]];
-
+    [versionField setStringValue:[infoDictionary objectForKey:@"CFBundleVersion"]];
+    
     NSString *aboutTextFile = [myBundle pathForResource:@"AboutText" ofType:@"rtf"];
     NSScrollView *aboutTextScrollView = [aboutField enclosingScrollView];
     [aboutField readRTFDFromFile:aboutTextFile];
@@ -65,9 +61,9 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
     [aboutTextScrollView setDrawsBackground:NO];
     [aboutTextScrollView setHasVerticalScroller:NSHeight([aboutField frame]) > NSHeight([aboutTextScrollView frame])];
     
-    [saveBtn setTitle:RCLocalizedString(@"Save", @"Save environment")];
-    [revertBtn setTitle:RCLocalizedString(@"Revert", @"Revert to saved environment")];
-    [backupBtn setTitle:RCLocalizedString(@"LoadBackup", @"Load backup")];
+    [saveButton setTitle:RCLocalizedString(@"Save", @"Save environment")];
+    [revertButton setTitle:RCLocalizedString(@"Revert", @"Revert to saved environment")];
+    [backupButton setTitle:RCLocalizedString(@"LoadBackup", @"Load backup")];
     [[variableColumn headerCell] setStringValue:RCLocalizedString(@"Variable", @"Variable column")];
     [[valueColumn headerCell] setStringValue:RCLocalizedString(@"Value", @"Value column")];
     [nextLoginField setStringValue:RCLocalizedString(@"NextLoginWarning", @"Warning about next login")];
@@ -75,13 +71,23 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
     [[tabView tabViewItemAtIndex:0] setLabel:RCLocalizedString(@"Environment", @"Environment tab label")];
     [[tabView tabViewItemAtIndex:1] setLabel:RCLocalizedString(@"About", @"About tab label")];
     
-    [inspectTitle setStringValue:RCLocalizedString(@"InspectTitle", @"Inspect Variable Title")];
-    [[inspectBtns cellAtRow:0 column:0] setTitle:RCLocalizedString(@"Cancel", @"Cancel button label")];
-    [[inspectBtns cellAtRow:0 column:1] setTitle:RCLocalizedString(@"Save", @"Save button label")];
+    [inspectTitle setStringValue:RCLocalizedString(@"EditVariable", @"Edit variable label")];
+    [[inspectButtons cellAtRow:0 column:0] setTitle:RCLocalizedString(@"Cancel", @"Cancel button label")];
+    [[inspectButtons cellAtRow:0 column:1] setTitle:RCLocalizedString(@"Save", @"Save button label")];
     
-    [addBtn setToolTip:RCLocalizedString(@"AddItemTip", @"Add an item")];
-    [removeBtn setToolTip:RCLocalizedString(@"RemoveItemTip", @"Remove item(s)")];
-    [editBtn setToolTip:RCLocalizedString(@"EditItemTip", @"Edit item")];
+    [addButton setToolTip:RCLocalizedString(@"AddItemTip", @"Add an item")];
+    [removeButton setToolTip:RCLocalizedString(@"RemoveItemTip", @"Remove item(s)")];
+    [editButton setToolTip:RCLocalizedString(@"EditItemTip", @"Edit item")];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyValueDataSourceDidChange:)
+                                                 name:RCKeyValueDataSourceChangedNotification
+                                               object:keyValueDataSource];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+					     selector:@selector(tableViewSelectionDidChange:)
+						 name:NSTableViewSelectionDidChangeNotification
+					       object:tableView];
 }
 
 - (void)didSelect
@@ -93,17 +99,21 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
 
 - (void)updateButtons:(BOOL)checkBackup
 {
-    [saveBtn setEnabled:isDocumentDirty];
-
+    [saveButton setEnabled:isDocumentDirty];
+    
+    int selectedRows = [tableView numberOfSelectedRows];
+    [removeButton setEnabled:(selectedRows > 0)];
+    [inspectButton setEnabled:(selectedRows == 1)];
+    
     if ( checkBackup ) {
         NSFileManager *fileManager = [NSFileManager defaultManager];
         BOOL isDir;
-
+	
         NSString *backupFile = [envDir stringByAppendingPathComponent:ENVIRONMENT_BACKUP];
-
-        [backupBtn setEnabled:([fileManager fileExistsAtPath:backupFile isDirectory:&isDir] &&
-                               !isDir &&
-                               [fileManager isReadableFileAtPath:backupFile])];
+	
+        [backupButton setEnabled:([fileManager fileExistsAtPath:backupFile isDirectory:&isDir] &&
+				  !isDir &&
+				  [fileManager isReadableFileAtPath:backupFile])];
     }
 }
 
@@ -112,14 +122,14 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL isDir;
-
+    
     NSString *envFile = [envDir stringByAppendingPathComponent:file];
-
+    
     if ( ![fileManager fileExistsAtPath:envFile isDirectory:&isDir] ) {
         if ( !isMainFile ) {
             NSBeginAlertSheet(RCLocalizedString(@"FileError", @"File error"),
-							  nil, nil, nil, prefWindow, nil, nil, nil, nil,
-							  RCLocalizedString(@"FileDoesNotExist", @"File does not exist"), ENVIRONMENT_DIR, file);
+			      nil, nil, nil, prefWindow, nil, nil, nil, nil,
+			      RCLocalizedString(@"FileDoesNotExist", @"File does not exist"), ENVIRONMENT_DIR, file);
         }
         else {
             [keyValueDataSource setDictionary:nil];
@@ -128,16 +138,16 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
     }
     else {
         BOOL isError = NO;
-
+	
         if ( isDir ) {
             NSBeginAlertSheet(RCLocalizedString(@"FileError", @"File error"),
-							  nil, nil, nil, prefWindow, nil, nil, nil, nil,
+			      nil, nil, nil, prefWindow, nil, nil, nil, nil,
                               RCLocalizedString(@"FileIsNotFile", @"File is not a file"), ENVIRONMENT_DIR, file);
             isError = YES;
         }
         else if ( ![fileManager isReadableFileAtPath:envFile] ) {
             NSBeginAlertSheet(RCLocalizedString(@"FileError", @"File error"),
-							  nil, nil, nil, prefWindow, nil, nil, nil, nil,
+			      nil, nil, nil, prefWindow, nil, nil, nil, nil,
                               RCLocalizedString(@"FileIsNotReadable", @"File is not readable"), ENVIRONMENT_DIR, file);
             isError = YES;
         }
@@ -151,7 +161,7 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
             isDocumentDirty = NO;
         }
     }
-
+    
     [self updateButtons:YES];
 }
 
@@ -173,22 +183,22 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSString *envFile = [envDir stringByAppendingPathComponent:ENVIRONMENT_FILE];
         NSString *backupFile = [envDir stringByAppendingPathComponent:ENVIRONMENT_BACKUP];
-
+	
         if ( ![fileManager fileExistsAtPath:envDir] ) {
             [fileManager createDirectoryAtPath:envDir attributes:nil];
-		}
-
+	}
+	
         // Remove backup file, ignore error if could not remove it, will deal with that below
         [fileManager removeFileAtPath:backupFile handler:nil];
-
+	
         if ( [fileManager fileExistsAtPath:envFile] && ![fileManager copyPath:envFile toPath:backupFile handler:nil] ) {
             NSBeginAlertSheet(RCLocalizedString(@"BackupError", @"Backup file error"),
-							  nil, nil, nil, prefWindow, nil, nil, nil, nil,
+			      nil, nil, nil, prefWindow, nil, nil, nil, nil,
                               RCLocalizedString(@"BackupFileNotWritable", @"Backup error unable to write"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP);
         }
         else if ( ![fileManager isCreatableFileAtPath:envFile] ) {
             NSBeginAlertSheet(RCLocalizedString(@"FileError", @"File error"),
-							  nil, nil, nil, prefWindow, nil, nil, nil, nil,
+			      nil, nil, nil, prefWindow, nil, nil, nil, nil,
                               RCLocalizedString(@"FileNotWritable", @"File can not be written"), ENVIRONMENT_DIR, ENVIRONMENT_FILE);
         }
         else {
@@ -214,6 +224,11 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
     [self updateButtons:NO];
 }
 
+- (void)tableViewSelectionDidChange:(NSNotification *)notification
+{
+    [self updateButtons:NO];
+}
+
 @end
 
 
@@ -223,10 +238,10 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
     if ( [self fileExistsAtPath:path] ) {
         // Return if we can write onto the file
         return [self isWritableFileAtPath:path];
-	}
-
-	// Return if we can write to the directory that we want the file
-	return [self isWritableFileAtPath:[path stringByDeletingLastPathComponent]];
+    }
+    
+    // Return if we can write to the directory that we want the file
+    return [self isWritableFileAtPath:[path stringByDeletingLastPathComponent]];
 }
 @end
 

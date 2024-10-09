@@ -18,17 +18,19 @@
             LANGUAGE = ObjC; 
             OUTLETS = {
                 aboutField = NSTextView; 
-                addBtn = NSButton; 
-                backupBtn = NSButton; 
-                editBtn = NSButton; 
-                inspectBtns = NSMatrix; 
+                addButton = NSButton; 
+                backupButton = NSButton; 
+                editButton = NSButton; 
+                inspectButton = NSButton; 
+                inspectButtons = NSMatrix; 
                 inspectTitle = NSTextField; 
                 keyValueDataSource = RCKeyValueDataSource; 
                 nextLoginField = NSTextField; 
-                removeBtn = NSButton; 
-                revertBtn = NSButtonCell; 
-                saveBtn = NSButtonCell; 
+                removeButton = NSButton; 
+                revertButton = NSButtonCell; 
+                saveButton = NSButtonCell; 
                 tabView = NSTabView; 
+                tableView = NSTableView; 
                 valueColumn = NSTableColumn; 
                 variableColumn = NSTableColumn; 
                 versionField = NSTextField; 
@@ -43,9 +45,7 @@
                 delegate = id; 
                 editKey = NSTextField; 
                 editValue = NSText; 
-                inspectButton = NSButton; 
                 inspectWindow = NSWindow; 
-                removeButton = NSButton; 
                 tableView = NSTableView; 
             }; 
             SUPERCLASS = NSObject; 

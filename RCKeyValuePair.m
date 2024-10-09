@@ -42,7 +42,7 @@
 {
     if (key != aKey) {
         id old = key;
-        key = [aKey retain];
+        key = [aKey copy];
         [old release];
     }
 }
@@ -57,7 +57,7 @@
 {
     if (value != anObject) {
         id old = value;
-        value = [anObject retain];
+        value = [anObject copy];
         [old release];
     }
 }
