@@ -186,7 +186,7 @@ NSString *ENVIRONMENT_BACKUP = @"environment~.plist";
 	
         if ( ![fileManager fileExistsAtPath:envDir] ) {
             [fileManager createDirectoryAtPath:envDir attributes:nil];
-	}
+        }
 	
         // Remove backup file, ignore error if could not remove it, will deal with that below
         [fileManager removeFileAtPath:backupFile handler:nil];
