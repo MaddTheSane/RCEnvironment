@@ -34,7 +34,6 @@
     
     // Control objects on the inspector page
     IBOutlet NSTextField *inspectTitle;
-    IBOutlet NSMatrix *inspectButtons;
     
     // Tab view, only need this for doing localization of the tab names
     IBOutlet NSTabView *tabView;

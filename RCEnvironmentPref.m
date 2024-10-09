@@ -61,24 +61,6 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
     [aboutTextScrollView setDrawsBackground:NO];
     [aboutTextScrollView setHasVerticalScroller:NSHeight([aboutField frame]) > NSHeight([aboutTextScrollView frame])];
     
-    [saveButton setTitle:RCLocalizedString(@"Save", @"Save environment")];
-    [revertButton setTitle:RCLocalizedString(@"Revert", @"Revert to saved environment")];
-    [backupButton setTitle:RCLocalizedString(@"LoadBackup", @"Load backup")];
-    [[variableColumn headerCell] setStringValue:RCLocalizedString(@"Variable", @"Variable column")];
-    [[valueColumn headerCell] setStringValue:RCLocalizedString(@"Value", @"Value column")];
-    [nextLoginField setStringValue:RCLocalizedString(@"NextLoginWarning", @"Warning about next login")];
-    
-    [[tabView tabViewItemAtIndex:0] setLabel:RCLocalizedString(@"Environment", @"Environment tab label")];
-    [[tabView tabViewItemAtIndex:1] setLabel:RCLocalizedString(@"About", @"About tab label")];
-    
-    [inspectTitle setStringValue:RCLocalizedString(@"EditVariable", @"Edit variable label")];
-    [[inspectButtons cellAtRow:0 column:0] setTitle:RCLocalizedString(@"Cancel", @"Cancel button label")];
-    [[inspectButtons cellAtRow:0 column:1] setTitle:RCLocalizedString(@"Save", @"Save button label")];
-    
-    [addButton setToolTip:RCLocalizedString(@"AddItemTip", @"Add an item")];
-    [removeButton setToolTip:RCLocalizedString(@"RemoveItemTip", @"Remove item(s)")];
-    [editButton setToolTip:RCLocalizedString(@"EditItemTip", @"Edit item")];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyValueDataSourceDidChange:)
                                                  name:RCKeyValueDataSourceChangedNotification
