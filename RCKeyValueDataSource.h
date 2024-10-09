@@ -39,7 +39,6 @@ extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
 //! This can be directly hooked up to an NSTableView in IB
 @property (nonatomic, strong) IBOutlet NSTableView *tableView;
 
-- (void)setDictionary:(NSDictionary<NSString*,NSString*> *)aDictionary;
 @property (nonatomic, copy) NSDictionary<NSString*,NSString*> *dictionary;
 
 - (IBAction)addItem:(id)sender;

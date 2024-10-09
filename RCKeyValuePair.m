@@ -22,8 +22,8 @@
 + (RCKeyValuePair *)keyValuePairWithKey:(NSString *)aKey andValue:(NSString *)anObject
 {
     RCKeyValuePair *object = [[RCKeyValuePair alloc] init];
-    [object setKey:aKey];
-    [object setValue:anObject];
+    object.key = aKey;
+    object.value = anObject;
     return object;
 }
 

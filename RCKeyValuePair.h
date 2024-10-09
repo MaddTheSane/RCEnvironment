@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSString *key;
     NSString *value;
 }
+- (instancetype)init;
 
 + (RCKeyValuePair *)keyValuePairWithKey:(NSString *)aKey andValue:(NSString *)anObject;
 
