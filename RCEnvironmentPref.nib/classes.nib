@@ -1,0 +1,56 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = NSPreferencePane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_firstKeyView" = id; 
+                "_initialKeyView" = id; 
+                "_lastKeyView" = id; 
+                "_window" = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {loadBackup = id; revert = id; save = id; showWebsite = id; }; 
+            CLASS = RCEnvironmentPref; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                aboutField = NSTextView; 
+                addBtn = NSButton; 
+                backupBtn = NSButton; 
+                editBtn = NSButton; 
+                inspectBtns = NSMatrix; 
+                inspectTitle = NSTextField; 
+                keyValueDataSource = RCKeyValueDataSource; 
+                nextLoginField = NSTextField; 
+                removeBtn = NSButton; 
+                revertBtn = NSButtonCell; 
+                saveBtn = NSButtonCell; 
+                tabView = NSTabView; 
+                valueColumn = NSTableColumn; 
+                variableColumn = NSTableColumn; 
+                versionField = NSTextField; 
+            }; 
+            SUPERCLASS = NSPreferencePane; 
+        }, 
+        {
+            ACTIONS = {addItem = id; editItem = id; endEditItem = id; removeItems = id; }; 
+            CLASS = RCKeyValueDataSource; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                delegate = id; 
+                editKey = NSTextField; 
+                editValue = NSText; 
+                inspectButton = NSButton; 
+                inspectWindow = NSWindow; 
+                removeButton = NSButton; 
+                tableView = NSTableView; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = RCKeyValueDataSourceDelegate; LANGUAGE = ObjC; }
+    ); 
+    IBVersion = 1; 
+}

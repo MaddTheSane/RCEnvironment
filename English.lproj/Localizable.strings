@@ -1,0 +1,115 @@
+/*===== TAB LABELS */
+
+/* Environement tab label */
+Environment = "Environment";
+
+/* About tab label */
+About = "About";
+
+
+/*===== BUTTON LABELS */
+
+/* Load Backup button label */
+LoadBackup = "Load Backup";
+
+/* Save button label */
+Save = "Save";
+
+/* Revert button label */
+Revert = "Revert";
+
+/* Cancel button label */
+Cancel = "Cancel";
+
+/* Continue label */
+Continue = "Continue";
+
+/* Don't show again label */
+DontShowAgain = "Don't Show Again";
+
+
+/*===== TABLE LABELS */
+
+/* Variable column label */
+Variable = "Variable";
+
+/* Value column label */
+Value = "Value";
+
+
+/*===== DEFAULT VALUE TEXT */
+
+/* Default key label */
+DefaultKey = "KEY";
+
+/* Default value label */
+DefaultValue = "value";
+
+
+/*===== ERROR PANEL TITLES */
+
+/* Value warning label */
+ValueWarning = "Value Warning";
+
+/* File error label */
+FileError = "File Error";
+
+/* Backup error label */
+BackupError = "Backup Error";
+
+/* Invalid Key label */
+InvalidKey = "Invalid Key";
+
+/* Key Warning label */
+KeyWarning = "Key Warning";
+
+
+/*===== ERROR STRINGS */
+
+/* File does not exist format string, format string */
+FileDoesNotExist = "~/%@/%@ does not exist, can not load.";
+
+/* File error: Is not a file, format string */
+FileIsNotFile = "~/%@/%@ is a directory, not a file.";
+
+/* File error: Is not readable, format string */
+FileIsNotReadable = "~/%@/%@ is not readable.";
+
+/* File error: Can not write file */
+FileNotWritable = "Can not write to ~/%@/%@. Please correct and attempt again.";
+
+/* Backup error unable to write file, format string */
+BackupFileNotWritable = "Can not write backup ~/%@/%@. Please correct and attempt again.";
+
+/* Invalid Key, non-zero length */
+ZeroLengthKey = "Key must be a non-zero length string.";
+
+/* Invalid key, already exists */
+KeyExists = "Key already exists.";
+
+/* Key warning, PATH variables can be bad */
+PathKeyWarning = "Be aware that setting the PATH environment variable can drastically affect how certain applications, especially developer tools and the shell environment, function.";
+
+/* Value warning, $ variables aren't expanded */
+DollarValueWarning = "Be aware that $<identifier> values are not expanded when the environment file is read.";
+
+
+/*===== MISC LABELS */
+
+/* Warning about changes taking effect on next login */
+NextLoginWarning = "Changes will take effect on your next login.";
+
+/* Edit variable label */
+EditVariable = "Edit Variable:";
+
+
+/*===== TOOL TIPS */
+
+/* Add item */
+AddItemTip = "Add a variable";
+
+/* Remove item(s) */
+RemoveItemTip = "Remove variables";
+
+/* Edit variable value */
+EditItemTip = "Edit variable value";
