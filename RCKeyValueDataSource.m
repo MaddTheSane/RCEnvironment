@@ -182,12 +182,17 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         editRow = [tableView selectedRow];
         
         if ( editRow != -1 ) {
-            RCKeyValuePair *data = [values objectAtIndex:editRow];
-            [editKey setStringValue:[data key]];
-            [editValue setString:[data value]];
+            RCKeyValuePair *data = values[editRow];
+            editKey.stringValue = data.key;
+            editValue.string = data.value;
             
             [[tableView window] beginSheet:inspectWindow completionHandler:^(NSModalResponse returnCode) {
+                if ( returnCode == NSAlertFirstButtonReturn) {
+                    values[editRow].value = [editValue string];
+                }
                 
+                editRow = -1;
+                [self _sortKeys]; /* In case the key was being renamed when editItem: was called */
             }];
         }
     }
@@ -195,13 +200,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 
 - (IBAction)endEditItem:(id)sender
 {
-    if ( [[sender selectedCell] tag] == 1 ) {
-        [[values objectAtIndex:editRow] setValue:[editValue string]];
-    }
-    
-    editRow = -1;
-    [self _sortKeys]; /* In case the key was being renamed when editItem: was called */
-    [[tableView window] endSheet:inspectWindow];
+    [tableView.window endSheet:inspectWindow returnCode:[sender tag] == 1 ? NSAlertFirstButtonReturn : NSAlertSecondButtonReturn];
     [inspectWindow close];
 }
 
@@ -210,7 +209,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 
 - (BOOL)_endEditing
 {
-    return [[tableView window] makeFirstResponder:[tableView window]];
+    return [tableView.window makeFirstResponder:[tableView window]];
 }
 
 - (void)_sortKeys
@@ -219,7 +218,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         NSString *selectedKey = nil;
         
         if ([tableView selectedRow] >= 0) {
-            selectedKey = [[values objectAtIndex:[tableView selectedRow]] key];
+            selectedKey = values[[tableView selectedRow]].key;
         }
         
         [values sortUsingSelector:@selector(compare:)];
@@ -240,7 +239,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 }
 
 
-// Table datasource methods
+// MARK: - Table datasource methods
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
