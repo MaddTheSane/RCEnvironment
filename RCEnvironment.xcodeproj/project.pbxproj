@@ -312,7 +312,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CURRENT_PROJECT_VERSION = 1.4;
+				CURRENT_PROJECT_VERSION = 1.4.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -321,7 +321,7 @@
 				INFOPLIST_KEY_NSMainNibFile = RCEnvironmentPref;
 				INFOPLIST_KEY_NSPrincipalClass = RCEnvironmentPref;
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rubicode.preferences.RCEnvironment;
 				PRODUCT_NAME = RCEnvironment;
 				WRAPPER_EXTENSION = prefPane;
@@ -380,7 +380,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CURRENT_PROJECT_VERSION = 1.4;
+				CURRENT_PROJECT_VERSION = 1.4.1;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -389,7 +389,7 @@
 				INFOPLIST_KEY_NSMainNibFile = RCEnvironmentPref;
 				INFOPLIST_KEY_NSPrincipalClass = RCEnvironmentPref;
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rubicode.preferences.RCEnvironment;
 				PRODUCT_NAME = RCEnvironment;
 				WRAPPER_EXTENSION = prefPane;
