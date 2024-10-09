@@ -17,10 +17,22 @@
             "value" : "Environment Variables"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Variables d'environnement"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Variabili Ambiente"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "環境変数"
           }
         },
         "zh_CN" : {
@@ -40,10 +52,46 @@
     "NSHumanReadableCopyright" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright © 2003-2006 von Doug McClure"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copyright © 2003-2006 by Doug McClure"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright © 2003-2006 par Doug McClure"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright © 2003-2006 di Doug McClure"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "著作権 © 2003-2006 ダグ・マクルーア"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "版权所有©2003-2006 作者：Doug McClure"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "版權所有©2003-2006 作者：Doug McClure"
           }
         }
       }
@@ -64,10 +112,22 @@
             "value" : "Environment Variables"
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Variables d'environnement"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Variabili Ambiente"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "環境変数"
           }
         },
         "zh_CN" : {

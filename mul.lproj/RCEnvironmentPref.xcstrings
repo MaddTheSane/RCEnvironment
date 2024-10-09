@@ -5,10 +5,34 @@
       "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Revert to Saved Variables\"; ObjectID = \"55I-md-ZAi\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Zurück zu gespeicherten Variablen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Revert to Saved Variables"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Torna alle variabili salvate"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "恢复到保存的变量"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "恢復到已儲存的變數"
           }
         }
       }
@@ -164,10 +188,34 @@
       "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Load Backup File\"; ObjectID = \"268\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sicherungsdatei Laden"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Load Backup File"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Carica il file di backup"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "加载备份文件"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "載入備份檔案"
           }
         }
       }
@@ -584,7 +632,8 @@
             "value" : "<version>"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "384.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Edit Variable: \"; ObjectID = \"384\";",
@@ -639,10 +688,34 @@
       "comment" : "Class = \"NSButton\"; ibShadowedToolTip = \"Save Variables\"; ObjectID = \"sFs-Dq-jhv\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Variablen Speichern"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Save Variables"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Salva le variabili"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "保存变量"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "儲存變數"
           }
         }
       }
