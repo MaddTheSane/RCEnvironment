@@ -134,8 +134,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
             }];
             [alert autorelease];
             isError = YES;
-        }
-        else if ( ![fileManager isReadableFileAtPath:envFile] ) {
+        } else if ( ![fileManager isReadableFileAtPath:envFile] ) {
             NSAlert *alert = [[NSAlert alloc] init];
             alert.messageText = RCLocalizedString(@"FileError", @"File error");
             alert.informativeText = [NSString localizedStringWithFormat:RCLocalizedString(@"FileIsNotReadable", @"File is not readable"), ENVIRONMENT_DIR, file];
@@ -144,8 +143,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
             }];
             [alert autorelease];
             isError = YES;
-        }
-        else {
+        } else {
             [keyValueDataSource setDictionary:[NSDictionary dictionaryWithContentsOfFile:envFile]];
             isDocumentDirty = !isMainFile;
         }
@@ -193,8 +191,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
                 
             }];
             [alert autorelease];
-        }
-        else if ( ![fileManager isCreatableFileAtPath:envFile] ) {
+        } else if ( ![fileManager isCreatableFileAtPath:envFile] ) {
             NSAlert *alert = [[NSAlert alloc] init];
             alert.messageText = RCLocalizedString(@"FileError", @"File error");
             alert.informativeText = [NSString localizedStringWithFormat:RCLocalizedString(@"FileNotWritable", @"File can not be written"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP];
@@ -202,8 +199,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
                 
             }];
             [alert autorelease];
-        }
-        else {
+        } else {
             [[keyValueDataSource dictionary] writeToFile:envFile atomically:NO];
             isDocumentDirty = NO;
             [self updateButtons:YES];

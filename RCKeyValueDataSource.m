@@ -107,13 +107,13 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
     //return [NSDictionary dictionaryWithObjects:[values valueForKey:@"value"] forKeys:[values valueForKey:@"key"]];
     
     // Non-Panther code
-    NSMutableDictionary<NSString*,NSString*> *dictionary = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString*,NSString*> *dictionary = [NSMutableDictionary dictionaryWithCapacity:values.count];
     
     for (RCKeyValuePair *pair in values) {
         dictionary[pair.key] = pair.value;
     }
     
-    return dictionary;
+    return [NSDictionary dictionaryWithDictionary:dictionary];
 }
 
 
@@ -295,7 +295,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         }
     }
     
-    // Must be trying to set the KEY value, but it was a zero
+    // Must be trying to set the KEY value, but it was empty
     else if ( [(NSString *)object length] == 0 ) {
         NSAlert *alert = [[NSAlert alloc] init];
         alert.messageText = RCLocalizedString(@"InvalidKey", @"Invalid Key");
@@ -319,7 +319,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         return NO;
     }
     
-    // If the key was set to PATH, make sure the complain
+    // If the key was set to PATH, make sure to complain
     else if ( [object isEqualToString:@"PATH"] ) {
         NSString *defaultsKey = [[bundleIdentifier stringByAppendingString:@".NoPathWarning"] retain];
         

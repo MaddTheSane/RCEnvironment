@@ -338,6 +338,12 @@
             "value" : "Elimina variabili"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "変数を削除する"
+          }
+        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "translated",
@@ -540,6 +546,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "RCEnvironment"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RC环境"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RC環境"
           }
         }
       }

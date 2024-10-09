@@ -347,6 +347,12 @@
             "value" : "Non Mostrare Di Nuovo"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "二度と見せないで"
+          }
+        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "translated",
