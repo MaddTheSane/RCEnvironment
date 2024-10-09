@@ -1,81 +1,8 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "About" : {
-      "comment" : "About tab label",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Über"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "About"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Info"
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "关於"
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "關於"
-          }
-        }
-      }
-    },
-    "AddItemTip" : {
-      "comment" : "Add item",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Variable hinzufügen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add a variable"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aggiungi una variabile"
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增变量"
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增變數"
-          }
-        }
-      }
-    },
     "BackupError" : {
       "comment" : "Backup error label",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -111,7 +38,6 @@
     },
     "BackupFileNotWritable" : {
       "comment" : "Backup error unable to write file, format string",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -183,7 +109,6 @@
     },
     "Continue" : {
       "comment" : "Continue label",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -219,7 +144,6 @@
     },
     "DefaultKey" : {
       "comment" : "Default key label",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -255,7 +179,6 @@
     },
     "DefaultValue" : {
       "comment" : "Default value label",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -291,7 +214,6 @@
     },
     "DollarValueWarning" : {
       "comment" : "Value warning, $ variables aren't expanded",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -327,7 +249,6 @@
     },
     "DontShowAgain" : {
       "comment" : "Don't show again label",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -338,7 +259,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Don't Show Again"
+            "value" : "Don’t Show Again"
           }
         },
         "it" : {
@@ -349,7 +270,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "二度と見せないで"
           }
         },
@@ -367,117 +288,8 @@
         }
       }
     },
-    "EditItemTip" : {
-      "comment" : "Edit variable value",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Variablenwert bearbeiten"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Edit variable value"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Modifica il valore della variabile"
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "编辑变量数值"
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "編輯變數數值"
-          }
-        }
-      }
-    },
-    "EditVariable" : {
-      "comment" : "Edit variable label",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Variable bearbeiten:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Edit Variable:"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Modifica Variabile:"
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "编辑变量:"
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "編輯變數:"
-          }
-        }
-      }
-    },
-    "Environment" : {
-      "comment" : "Environement tab label",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Umgebung"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Environment"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ambiente"
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "环境"
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "環境"
-          }
-        }
-      }
-    },
     "FileDoesNotExist" : {
       "comment" : "File does not exist format string, format string",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -513,7 +325,6 @@
     },
     "FileError" : {
       "comment" : "File error label",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -549,7 +360,6 @@
     },
     "FileIsNotFile" : {
       "comment" : "File error: Is not a file, format string",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -585,7 +395,6 @@
     },
     "FileIsNotReadable" : {
       "comment" : "File error: Is not readable, format string",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -621,7 +430,6 @@
     },
     "FileNotWritable" : {
       "comment" : "File error: Can not write file",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -657,7 +465,6 @@
     },
     "InvalidKey" : {
       "comment" : "Invalid Key label",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -693,7 +500,6 @@
     },
     "KeyExists" : {
       "comment" : "Invalid key, already exists",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -729,7 +535,6 @@
     },
     "KeyWarning" : {
       "comment" : "Key Warning label",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -763,81 +568,8 @@
         }
       }
     },
-    "LoadBackup" : {
-      "comment" : "Load Backup button label",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Backup laden"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Load Backup"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carica Backup"
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "载入备份"
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "載入備份"
-          }
-        }
-      }
-    },
-    "NextLoginWarning" : {
-      "comment" : "Warning about changes taking effect on next login",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Änderungen werden nach den nächsten Login wirksam."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Changes will take effect on your next login."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le modifiche avranno effetto al tuo prossimo login."
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "改变会在你下一次登入生效."
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "改變會在你下一次登入生效."
-          }
-        }
-      }
-    },
     "PathKeyWarning" : {
       "comment" : "Key warning, PATH variables can be bad",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -871,153 +603,8 @@
         }
       }
     },
-    "RemoveItemTip" : {
-      "comment" : "Remove item(s)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Variable entfernen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remove variables"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Elimina variabili"
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "删除变量"
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "刪除變數"
-          }
-        }
-      }
-    },
-    "Revert" : {
-      "comment" : "Revert button label",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Löschen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Revert"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ripristina"
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "回复"
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "回復"
-          }
-        }
-      }
-    },
-    "Save" : {
-      "comment" : "Save button label",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Speichern"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Save"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Registra"
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "储存"
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "儲存"
-          }
-        }
-      }
-    },
-    "Value" : {
-      "comment" : "Value column label",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wert"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Value"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Valore"
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "数值"
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "數值"
-          }
-        }
-      }
-    },
     "ValueWarning" : {
       "comment" : "Value warning label",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1051,45 +638,8 @@
         }
       }
     },
-    "Variable" : {
-      "comment" : "Variable column label",
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Variable"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Variable"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Variabile"
-          }
-        },
-        "zh_CN" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "变量"
-          }
-        },
-        "zh_TW" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "變數"
-          }
-        }
-      }
-    },
     "ZeroLengthKey" : {
       "comment" : "Invalid Key, non-zero length",
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
