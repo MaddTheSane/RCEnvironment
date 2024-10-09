@@ -11,57 +11,29 @@
 
 @implementation RCKeyValuePair
 
+-(instancetype)init {
+    if (self = [super init]) {
+        key = @"";
+        value = @"";
+    }
+    return self;
+}
+
 + (RCKeyValuePair *)keyValuePairWithKey:(NSString *)aKey andValue:(NSString *)anObject
 {
-    RCKeyValuePair *object = [[[RCKeyValuePair alloc] init] autorelease];
+    RCKeyValuePair *object = [[RCKeyValuePair alloc] init];
     [object setKey:aKey];
     [object setValue:anObject];
     return object;
 }
-
-
-- (void)dealloc
-{
-    [self setKey:nil];
-    [self setValue:nil];
-    [super dealloc];
-}
-
 
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"key:%@, value:%@", [self key], [self value]];
 }
 
-
-- (NSString *)key
-{
-    return key;
-}
-
-- (void)setKey:(NSString *)aKey
-{
-    if (key != aKey) {
-        id old = key;
-        key = [aKey copy];
-        [old release];
-    }
-}
-
-
-- (NSString *)value
-{
-    return value;
-}
-
-- (void)setValue:(NSString *)anObject
-{
-    if (value != anObject) {
-        id old = value;
-        value = [anObject copy];
-        [old release];
-    }
-}
+@synthesize key;
+@synthesize value;
 
 
 - (NSComparisonResult)compare:(RCKeyValuePair *)anotherPair

@@ -37,7 +37,7 @@
 
 NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourceChangedNotification";
 
-@interface RCKeyValueDataSource(Private)
+@interface RCKeyValueDataSource()
 - (void)_sortKeys;
 - (BOOL)_endEditing;
 @end
@@ -46,8 +46,9 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 
 - (id)init
 {
-    [super init];
-    editRow = -1;
+    if (self = [super init]) {
+        editRow = -1;
+    }
     return self;
 }
 
@@ -61,13 +62,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
     [super dealloc];
 }
 
-
-- (void)setBundleIdentifier:(NSString *)string;
-{
-    id old = bundleIdentifier;
-    bundleIdentifier = [string retain];
-    [old release];
-}
+@synthesize bundleIdentifier;
 
 
 - (void)setTableView:(NSTableView *)aTableView
@@ -87,26 +82,24 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
                                                  name:NSControlTextDidEndEditingNotification
                                                object:tableView];
 }
-- (NSTableView *)tableView
-{
-    return tableView;
-}
+@synthesize tableView;
+@dynamic dictionary;
 
-
-- (void)setDictionary:(NSDictionary *)aDictionary
+- (void)setDictionary:(NSDictionary<NSString*,NSString*> *)aDictionary
 {
+    if (values) {
+        [values release];
+    }
     values = [[NSMutableArray alloc] init];
     
-    NSEnumerator *enumerator = [[aDictionary allKeys] objectEnumerator];
-    NSString *key;
-    while (key = [enumerator nextObject]) {
-        [values addObject:[RCKeyValuePair keyValuePairWithKey:key andValue:[aDictionary objectForKey:key]]];
+    for (NSString *key in aDictionary) {
+        [values addObject:[RCKeyValuePair keyValuePairWithKey:key andValue:aDictionary[key]]];
     }
     
     [self _sortKeys];
 }
 
-- (NSDictionary *)dictionary
+- (NSDictionary<NSString*,NSString*> *)dictionary
 {
     // The following code is only available in Panther, that is the valueForKey: support on
     // NSArray.  The code that the method uses is technically faster and cheaper, but the
@@ -114,24 +107,22 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
     //return [NSDictionary dictionaryWithObjects:[values valueForKey:@"value"] forKeys:[values valueForKey:@"key"]];
     
     // Non-Panther code
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-    NSEnumerator *enumerator = [values objectEnumerator];
-    RCKeyValuePair *pair;
+    NSMutableDictionary<NSString*,NSString*> *dictionary = [NSMutableDictionary dictionaryWithCapacity:values.count];
     
-    while ( pair = (RCKeyValuePair *)[enumerator nextObject] ) {
-	[dictionary setObject:[pair value] forKey:[pair key]];
+    for (RCKeyValuePair *pair in values) {
+        dictionary[pair.key] = pair.value;
     }
     
-    return dictionary;
+    return [NSDictionary dictionaryWithDictionary:dictionary];
 }
 
 
 - (NSUInteger)indexOfKey:(NSString *)aKey
 {
-    int i = 0, count = [values count];
+    NSInteger i = 0, count = [values count];
     
     for ( ; i < count; i++ ) {
-        if ( [[[values objectAtIndex:i] key] isEqualToString:aKey] ) {
+        if ( [values[i].key isEqualToString:aKey] ) {
             return i;
         }
     }
@@ -161,7 +152,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         
         [tableView reloadData];
         
-        [tableView selectRow:([values count]-1) byExtendingSelection:NO];
+        [tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:([values count]-1)] byExtendingSelection:NO];
         [tableView editColumn:0 row:([values count]-1) withEvent:nil select:YES];
         
         [[NSNotificationCenter defaultCenter] postNotificationName:RCKeyValueDataSourceChangedNotification object:self];
@@ -171,18 +162,10 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 - (IBAction)removeItems:(id)sender
 {
     if ( [self _endEditing] ) {
-        NSArray *selectedRows = [[tableView selectedRowEnumerator] allObjects];
+        NSIndexSet *selectedRows = [tableView selectedRowIndexes];
         
         if ( [selectedRows count] > 0 ) {
-            int count = [selectedRows count];
-            NSUInteger indices[count];
-            int i;
-            
-            for (i = 0; i < count; i++) {
-                indices[i] = [[selectedRows objectAtIndex:i] intValue];
-            }
-            
-            [values removeObjectsFromIndices:indices numIndices:count];
+            [values removeObjectsAtIndexes:selectedRows];
             
             [tableView reloadData];
             
@@ -203,7 +186,9 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
             [editKey setStringValue:[data key]];
             [editValue setString:[data value]];
             
-            [NSApp beginSheet:inspectWindow modalForWindow:[tableView window] modalDelegate:self didEndSelector:nil contextInfo:nil];
+            [[tableView window] beginSheet:inspectWindow completionHandler:^(NSModalResponse returnCode) {
+                
+            }];
         }
     }
 }
@@ -216,7 +201,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
     
     editRow = -1;
     [self _sortKeys]; /* In case the key was being renamed when editItem: was called */
-    [NSApp endSheet:inspectWindow];
+    [[tableView window] endSheet:inspectWindow];
     [inspectWindow close];
 }
 
@@ -241,7 +226,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         [tableView reloadData];
         
         if (selectedKey != nil) {
-            [tableView selectRow:[self indexOfKey:selectedKey] byExtendingSelection:NO];
+            [tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:[self indexOfKey:selectedKey]] byExtendingSelection:NO];
         }
     }
 }
@@ -293,57 +278,70 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
             NSString *defaultsKey = [[bundleIdentifier stringByAppendingString:@".NoValueWarning"] retain];
             
             if ( ![[NSUserDefaults standardUserDefaults] boolForKey:defaultsKey] ) {
-                NSBeginAlertSheet(RCLocalizedString(@"ValueWarning", @"Value warning"), 
-                                  RCLocalizedString(@"Continue", @"Continue"), 
-                                  RCLocalizedString(@"DontShowAgain", @"Don't Show Again"),
-                                  nil, [tableView window], self, @selector(_alertSheetDidEnd:returnCode:contextInfo:), nil, defaultsKey,
-                                  RCLocalizedString(@"DollarValueWarning", @"Warning about using $ in values."));
+                NSAlert *alert = [[NSAlert alloc] init];
+                alert.messageText = RCLocalizedString(@"ValueWarning", @"Value warning");
+                alert.informativeText = RCLocalizedString(@"DollarValueWarning", @"Warning about using $ in values.");
+                [alert addButtonWithTitle:RCLocalizedString(@"Continue", @"Continue")];
+                [alert addButtonWithTitle:RCLocalizedString(@"DontShowAgain", @"Don't Show Again")];
+                [alert beginSheetModalForWindow:tableView.window completionHandler:^(NSModalResponse returnCode) {
+                    if (returnCode == NSAlertSecondButtonReturn) {
+                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:defaultsKey];
+                        [[NSUserDefaults standardUserDefaults] synchronize];
+                    }
+                    [defaultsKey release];
+                }];
+                [alert autorelease];
             }
         }
     }
     
-    // Must be trying to set the KEY value, but it was a zero
+    // Must be trying to set the KEY value, but it was empty
     else if ( [(NSString *)object length] == 0 ) {
-        NSBeginAlertSheet(RCLocalizedString(@"InvalidKey", @"Invalid Key"),
-                          nil, nil, nil, [tableView window], nil, nil, nil, nil,
-                          RCLocalizedString(@"ZeroLengthKey", @"Non-zero length strings only"));
+        NSAlert *alert = [[NSAlert alloc] init];
+        alert.messageText = RCLocalizedString(@"InvalidKey", @"Invalid Key");
+        alert.informativeText = RCLocalizedString(@"ZeroLengthKey", @"Non-zero length strings only");
+        [alert beginSheetModalForWindow:tableView.window completionHandler:^(NSModalResponse returnCode) {
+            
+        }];
+        [alert release];
         return NO;
     }
     
     // If the user entered a new value for the key and the key exists in the data source already
     else if ( ![[[values objectAtIndex:[tableView editedRow]] key] isEqualToString:object] && [self keyExistsAlready:object] ) {
-        NSBeginAlertSheet(RCLocalizedString(@"InvalidKey", @"Invalid Key"),
-                          nil, nil, nil, [tableView window], nil, nil, nil, nil,
-                          RCLocalizedString(@"KeyExists", @"Key already exists."));
+        NSAlert *alert = [[NSAlert alloc] init];
+        alert.messageText = RCLocalizedString(@"InvalidKey", @"Invalid Key");
+        alert.informativeText = RCLocalizedString(@"KeyExists", @"Key already exists.");
+        [alert beginSheetModalForWindow:tableView.window completionHandler:^(NSModalResponse returnCode) {
+            
+        }];
+        [alert autorelease];
         return NO;
     }
     
-    // If the key was set to PATH, make sure the complain
+    // If the key was set to PATH, make sure to complain
     else if ( [object isEqualToString:@"PATH"] ) {
         NSString *defaultsKey = [[bundleIdentifier stringByAppendingString:@".NoPathWarning"] retain];
         
         // Only do it if the user hasn't said they should ignore further warnings on this issue.
         if ( ![[NSUserDefaults standardUserDefaults] boolForKey:defaultsKey] ) {
-            NSBeginAlertSheet(RCLocalizedString(@"KeyWarning", @"Key warning"),
-                              RCLocalizedString(@"Continue", @"Continue"),
-                              RCLocalizedString(@"DontShowAgain", @"Don't Show Again"),
-                              nil, [tableView window], self, @selector(_alertSheetDidEnd:returnCode:contextInfo:), nil, defaultsKey,
-                              RCLocalizedString(@"PathKeyWarning", @"Warning about using PATH"));
+            NSAlert *alert = [[NSAlert alloc] init];
+            alert.messageText = RCLocalizedString(@"KeyWarning", @"Key warning");
+            alert.informativeText = RCLocalizedString(@"PathKeyWarning", @"Warning about using PATH");
+            [alert addButtonWithTitle:RCLocalizedString(@"Continue", @"Continue")];
+            [alert addButtonWithTitle:RCLocalizedString(@"DontShowAgain", @"Don't Show Again")];
+            [alert beginSheetModalForWindow:tableView.window completionHandler:^(NSModalResponse returnCode) {
+                if (returnCode == NSAlertSecondButtonReturn) {
+                    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:defaultsKey];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                }
+                [defaultsKey release];
+            }];
+            [alert autorelease];
         }
     }
     
     return YES;
-}
-
-// Close the warning sheet, and write a default for whether to continue warning on this
-- (void)_alertSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-    if ( returnCode == NSAlertAlternateReturn ) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:(NSString *)contextInfo];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    
-    [(NSString *)contextInfo release];
 }
 
 @end
