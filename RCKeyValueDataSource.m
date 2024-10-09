@@ -59,7 +59,6 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 
 @synthesize bundleIdentifier;
 
-
 - (void)setTableView:(NSTableView *)aTableView
 {
     if ( tableView != nil ) {
@@ -76,8 +75,8 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
                                                object:tableView];
 }
 @synthesize tableView;
-@dynamic dictionary;
 
+@dynamic dictionary;
 - (void)setDictionary:(NSDictionary<NSString*,NSString*> *)aDictionary
 {
     values = [[NSMutableArray alloc] init];
@@ -105,7 +104,6 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
     
     return [NSDictionary dictionaryWithDictionary:dictionary];
 }
-
 
 - (NSUInteger)indexOfKey:(NSString *)aKey
 {

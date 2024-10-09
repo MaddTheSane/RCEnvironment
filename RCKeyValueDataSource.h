@@ -25,8 +25,6 @@ extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
     IBOutlet NSText *editValue;
 
 @private
-    NSWindow *prefWindow;
-
     NSMutableArray<RCKeyValuePair*> *values;
 
     NSString *bundleIdentifier;
