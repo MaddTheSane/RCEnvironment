@@ -175,7 +175,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         
         if ( [selectedRows count] > 0 ) {
             int count = [selectedRows count];
-            int indices[count];
+            unsigned indices[count];
             int i;
             
             for (i = 0; i < count; i++) {

@@ -24,6 +24,7 @@
 {
     [self setKey:nil];
     [self setValue:nil];
+    [super dealloc];
 }
 
 
