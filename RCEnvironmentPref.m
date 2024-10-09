@@ -35,6 +35,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
 
 @interface NSFileManager (Extension)
 - (BOOL)isCreatableFileAtPath:(NSString *)path;
+- (BOOL)isCreatableFileAtURL:(NSURL *)path;
 @end
 
 
@@ -42,7 +43,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
 
 - (void)mainViewDidLoad
 {    
-    envDir = [[NSHomeDirectory() stringByAppendingPathComponent:ENVIRONMENT_DIR] copy];
+    envDir = [[[[NSFileManager defaultManager] homeDirectoryForCurrentUser] URLByAppendingPathComponent:ENVIRONMENT_DIR] retain];
     
     [super mainViewDidLoad];
     
@@ -91,11 +92,11 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
         NSFileManager *fileManager = [NSFileManager defaultManager];
         BOOL isDir;
 	
-        NSString *backupFile = [envDir stringByAppendingPathComponent:ENVIRONMENT_BACKUP];
+        NSURL *backupFile = [envDir URLByAppendingPathComponent:ENVIRONMENT_BACKUP];
 	
-        [backupButton setEnabled:([fileManager fileExistsAtPath:backupFile isDirectory:&isDir] &&
-				  !isDir &&
-				  [fileManager isReadableFileAtPath:backupFile])];
+        [backupButton setEnabled:([fileManager fileExistsAtPath:backupFile.path isDirectory:&isDir] &&
+                                  !isDir &&
+                                  [fileManager isReadableFileAtPath:backupFile.path])];
     }
 }
 
@@ -105,9 +106,9 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL isDir;
     
-    NSString *envFile = [envDir stringByAppendingPathComponent:file];
+    NSURL *envFile = [envDir URLByAppendingPathComponent:file];
     
-    if ( ![fileManager fileExistsAtPath:envFile isDirectory:&isDir] ) {
+    if ( ![fileManager fileExistsAtPath:envFile.path isDirectory:&isDir] ) {
         if ( !isMainFile ) {
             NSAlert *alert = [[NSAlert alloc] init];
             alert.messageText = RCLocalizedString(@"FileError", @"File error");
@@ -134,7 +135,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
             }];
             [alert autorelease];
             isError = YES;
-        } else if ( ![fileManager isReadableFileAtPath:envFile] ) {
+        } else if ( ![fileManager isReadableFileAtPath:envFile.path] ) {
             NSAlert *alert = [[NSAlert alloc] init];
             alert.messageText = RCLocalizedString(@"FileError", @"File error");
             alert.informativeText = [NSString localizedStringWithFormat:RCLocalizedString(@"FileIsNotReadable", @"File is not readable"), ENVIRONMENT_DIR, file];
@@ -144,7 +145,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
             [alert autorelease];
             isError = YES;
         } else {
-            [keyValueDataSource setDictionary:[NSDictionary dictionaryWithContentsOfFile:envFile]];
+            [keyValueDataSource setDictionary:[NSDictionary dictionaryWithContentsOfURL:envFile]];
             isDocumentDirty = !isMainFile;
         }
         
@@ -173,17 +174,17 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
 {
     if ( [prefWindow makeFirstResponder:prefWindow] ) {
         NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSString *envFile = [envDir stringByAppendingPathComponent:ENVIRONMENT_FILE];
-        NSString *backupFile = [envDir stringByAppendingPathComponent:ENVIRONMENT_BACKUP];
+        NSURL *envFile = [envDir URLByAppendingPathComponent:ENVIRONMENT_FILE];
+        NSURL *backupFile = [envDir URLByAppendingPathComponent:ENVIRONMENT_BACKUP];
 	
-        if ( ![fileManager fileExistsAtPath:envDir] ) {
-            [fileManager createDirectoryAtPath:envDir withIntermediateDirectories:YES attributes:nil error:NULL];
+        if ( ![fileManager fileExistsAtPath:envDir.path] ) {
+            [fileManager createDirectoryAtURL:envDir withIntermediateDirectories:YES attributes:nil error:NULL];
         }
 	
         // Remove backup file, ignore error if could not remove it, will deal with that below
-        [fileManager removeItemAtPath:backupFile error:nil];
+        [fileManager removeItemAtURL:backupFile error:nil];
 	
-        if ( [fileManager fileExistsAtPath:envFile] && ![fileManager copyItemAtPath:envFile toPath:backupFile error:NULL] ) {
+        if ( [fileManager fileExistsAtPath:envFile.path] && ![fileManager copyItemAtURL:envFile toURL:backupFile error:NULL] ) {
             NSAlert *alert = [[NSAlert alloc] init];
             alert.messageText = RCLocalizedString(@"BackupError", @"Backup file error");
             alert.informativeText = [NSString localizedStringWithFormat:RCLocalizedString(@"BackupFileNotWritable", @"Backup error unable to write"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP];
@@ -191,7 +192,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
                 
             }];
             [alert autorelease];
-        } else if ( ![fileManager isCreatableFileAtPath:envFile] ) {
+        } else if ( ![fileManager isCreatableFileAtURL:envFile] ) {
             NSAlert *alert = [[NSAlert alloc] init];
             alert.messageText = RCLocalizedString(@"FileError", @"File error");
             alert.informativeText = [NSString localizedStringWithFormat:RCLocalizedString(@"FileNotWritable", @"File can not be written"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP];
@@ -200,7 +201,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
             }];
             [alert autorelease];
         } else {
-            [[keyValueDataSource dictionary] writeToFile:envFile atomically:NO];
+            [[keyValueDataSource dictionary] writeToURL:envFile atomically:NO];
             isDocumentDirty = NO;
             [self updateButtons:YES];
         }
@@ -241,5 +242,23 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
     // Return if we can write to the directory that we want the file
     return [self isWritableFileAtPath:[path stringByDeletingLastPathComponent]];
 }
+
+- (BOOL)isCreatableFileAtURL:(NSURL *)path {
+    if ([path checkResourceIsReachableAndReturnError:NULL]) {
+        NSNumber *value;
+        if ([path getResourceValue:&value forKey:NSURLIsWritableKey error:NULL] && value.boolValue) {
+            // Return if we can write onto the file
+            return YES;
+        }
+
+        return NO;
+    }
+    
+    NSURL *superPath = [path URLByDeletingLastPathComponent];
+    NSNumber *value;
+    // Return if we can write to the directory that we want the file
+    return ([superPath getResourceValue:&value forKey:NSURLIsWritableKey error:NULL] && value.boolValue);
+}
+
 @end
 

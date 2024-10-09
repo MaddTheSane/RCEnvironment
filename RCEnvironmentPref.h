@@ -34,7 +34,7 @@
     IBOutlet RCKeyValueDataSource *keyValueDataSource;
     
 @private
-    NSString *envDir;
+    NSURL *envDir;
     NSWindow *prefWindow;
 
     BOOL isDocumentDirty;
