@@ -55,11 +55,6 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
-    [values release];
-    [tableView release];
-    
-    [super dealloc];
 }
 
 @synthesize bundleIdentifier;
@@ -73,9 +68,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
                                                       object:tableView];
     }
     
-    id old = tableView;
-    tableView = [aTableView retain];
-    [old release];
+    tableView = aTableView;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(_tableViewDidEndEditing:)
@@ -87,9 +80,6 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 
 - (void)setDictionary:(NSDictionary<NSString*,NSString*> *)aDictionary
 {
-    if (values) {
-        [values release];
-    }
     values = [[NSMutableArray alloc] init];
     
     for (NSString *key in aDictionary) {
@@ -188,10 +178,10 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
             
             [[tableView window] beginSheet:inspectWindow completionHandler:^(NSModalResponse returnCode) {
                 if ( returnCode == NSAlertFirstButtonReturn) {
-                    values[editRow].value = [editValue string];
+                    self->values[self->editRow].value = [self->editValue string];
                 }
                 
-                editRow = -1;
+                self->editRow = -1;
                 [self _sortKeys]; /* In case the key was being renamed when editItem: was called */
             }];
         }
@@ -274,7 +264,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         NSRange dollarRange = [object rangeOfString:@"$"];
         
         if ( dollarRange.length > 0 ) {
-            NSString *defaultsKey = [[bundleIdentifier stringByAppendingString:@".NoValueWarning"] retain];
+            NSString *defaultsKey = [bundleIdentifier stringByAppendingString:@".NoValueWarning"];
             
             if ( ![[NSUserDefaults standardUserDefaults] boolForKey:defaultsKey] ) {
                 NSAlert *alert = [[NSAlert alloc] init];
@@ -287,9 +277,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
                         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:defaultsKey];
                         [[NSUserDefaults standardUserDefaults] synchronize];
                     }
-                    [defaultsKey release];
                 }];
-                [alert autorelease];
             }
         }
     }
@@ -302,7 +290,6 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         [alert beginSheetModalForWindow:tableView.window completionHandler:^(NSModalResponse returnCode) {
             
         }];
-        [alert release];
         return NO;
     }
     
@@ -314,13 +301,12 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         [alert beginSheetModalForWindow:tableView.window completionHandler:^(NSModalResponse returnCode) {
             
         }];
-        [alert autorelease];
         return NO;
     }
     
     // If the key was set to PATH, make sure to complain
     else if ( [object isEqualToString:@"PATH"] ) {
-        NSString *defaultsKey = [[bundleIdentifier stringByAppendingString:@".NoPathWarning"] retain];
+        NSString *defaultsKey = [bundleIdentifier stringByAppendingString:@".NoPathWarning"];
         
         // Only do it if the user hasn't said they should ignore further warnings on this issue.
         if ( ![[NSUserDefaults standardUserDefaults] boolForKey:defaultsKey] ) {
@@ -334,9 +320,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:defaultsKey];
                     [[NSUserDefaults standardUserDefaults] synchronize];
                 }
-                [defaultsKey release];
             }];
-            [alert autorelease];
         }
     }
     

@@ -16,13 +16,13 @@
 		91D1DE2207514711001E0C2D /* RCKeyValueDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */; };
 		91D1DE2307514711001E0C2D /* RCKeyValueDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE1E07514711001E0C2D /* RCKeyValueDataSource.m */; };
 		91D1DE2407514711001E0C2D /* RCKeyValuePair.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE1F07514711001E0C2D /* RCKeyValuePair.h */; };
-		91D1DE2507514711001E0C2D /* RCKeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE2007514711001E0C2D /* RCKeyValuePair.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		91D1DE2507514711001E0C2D /* RCKeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE2007514711001E0C2D /* RCKeyValuePair.m */; };
 		91D1DE2607514711001E0C2D /* RCMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE2107514711001E0C2D /* RCMacros.h */; };
 		91D1DE3807514923001E0C2D /* RCEnvironmentPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2E07514923001E0C2D /* RCEnvironmentPref.tiff */; };
 		91D1DE3907514923001E0C2D /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2F07514923001E0C2D /* README.rtf */; };
 		91D1DE4307514975001E0C2D /* AboutText.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE3F07514975001E0C2D /* AboutText.rtf */; };
 		91D1DE5207514A09001E0C2D /* RCEnvironmentPref.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE5007514A09001E0C2D /* RCEnvironmentPref.h */; };
-		91D1DE5307514A09001E0C2D /* RCEnvironmentPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */; };
+		91D1DE5307514A09001E0C2D /* RCEnvironmentPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -262,6 +262,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -329,6 +330,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
