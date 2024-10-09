@@ -108,7 +108,8 @@
             "value" : "Title"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "248.title" : {
       "comment" : "Class = \"NSBox\"; title = \"Title\"; ObjectID = \"248\";",
@@ -120,7 +121,8 @@
             "value" : "Title"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "265.headerCell.title" : {
       "comment" : "Class = \"NSTableColumn\"; headerCell.title = \"Value\"; ObjectID = \"265\";",
@@ -390,10 +392,34 @@
       "comment" : "Class = \"NSButtonCell\"; title = \"Cancel\"; ObjectID = \"352\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Cancel"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
           }
         }
       }
