@@ -168,10 +168,10 @@
                                                 <action selector="loadBackup:" target="-2" id="291"/>
                                             </connections>
                                         </button>
-                                        <button imageHugsTitle="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="333">
+                                        <button imageHugsTitle="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="333" userLabel="Add">
                                             <rect key="frame" x="7" y="4" width="23" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="377">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="377">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -179,10 +179,10 @@
                                                 <action selector="addItem:" target="140" id="335"/>
                                             </connections>
                                         </button>
-                                        <button imageHugsTitle="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="334">
+                                        <button imageHugsTitle="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="334" userLabel="Remove">
                                             <rect key="frame" x="29" y="4" width="23" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="378">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="378">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -190,10 +190,10 @@
                                                 <action selector="removeItems:" target="140" id="336"/>
                                             </connections>
                                         </button>
-                                        <button imageHugsTitle="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="338">
+                                        <button imageHugsTitle="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="338" userLabel="Inspect">
                                             <rect key="frame" x="51" y="4" width="23" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" image="Inspect" imagePosition="only" alignment="center" alternateImage="Inspect_Pressed" inset="2" id="379">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Inspect" imagePosition="only" alignment="center" alternateImage="Inspect_Pressed" inset="2" id="379">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
