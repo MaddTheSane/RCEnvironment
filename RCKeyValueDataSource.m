@@ -26,11 +26,11 @@
  */
 
 #import "RCKeyValueDataSource.h"
-#import "RCKeyValuePair.h"
 #import "RCMacros.h"
 #import "RCEnvironmentPref.h"
 #import <AppKit/NSTableColumn.h>
 #import <AppKit/NSPanel.h>
+#import "RCEnvironment-Swift.h"
 
 // The column in the tableView must have an identifier named this way
 #define KEY_COLUMN_ID	@"key"
@@ -82,7 +82,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
     values = [[NSMutableArray alloc] init];
     
     for (NSString *key in aDictionary) {
-        [values addObject:[RCKeyValuePair keyValuePairWithKey:key andValue:aDictionary[key]]];
+        [values addObject:[KeyValuePair keyValuePairWithKey:key andValue:aDictionary[key]]];
     }
     
     [self _sortKeys];
@@ -98,7 +98,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
     // Non-Panther code
     NSMutableDictionary<NSString*,NSString*> *dictionary = [NSMutableDictionary dictionaryWithCapacity:values.count];
     
-    for (RCKeyValuePair *pair in values) {
+    for (KeyValuePair *pair in values) {
         dictionary[pair.key] = pair.value;
     }
     
@@ -136,7 +136,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
             key = [defaultKey stringByAppendingFormat:@"%d", keyOffset++];
         }
         
-        [values addObject:[RCKeyValuePair keyValuePairWithKey:key andValue:RCLocalizedString(@"DefaultValue", @"Default value")]];
+        [values addObject:[KeyValuePair keyValuePairWithKey:key andValue:RCLocalizedString(@"DefaultValue", @"Default value")]];
         
         [tableView reloadData];
         
@@ -170,7 +170,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         editRow = [tableView selectedRow];
         
         if ( editRow != -1 ) {
-            RCKeyValuePair *data = values[editRow];
+            KeyValuePair *data = values[editRow];
             editKey.stringValue = data.key;
             editValue.string = data.value;
             
@@ -236,7 +236,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex
 {
-    RCKeyValuePair *data = [values objectAtIndex:rowIndex];
+    KeyValuePair *data = [values objectAtIndex:rowIndex];
     return [[tableColumn identifier] isEqual:KEY_COLUMN_ID] ? [data key] : [data value];
 }
 
@@ -246,7 +246,7 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
         objectValue = @"";
     }
     
-    RCKeyValuePair *data = [values objectAtIndex:rowIndex];
+    KeyValuePair *data = [values objectAtIndex:rowIndex];
     [[tableColumn identifier] isEqual:KEY_COLUMN_ID] ? [data setKey:objectValue] : [data setValue:objectValue];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:RCKeyValueDataSourceChangedNotification object:self];

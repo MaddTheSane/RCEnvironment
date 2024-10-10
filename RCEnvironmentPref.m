@@ -53,9 +53,9 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
     [keyValueDataSource setBundleIdentifier:[infoDictionary objectForKey:@"CFBundleIdentifier"]];
     [versionField setStringValue:[infoDictionary objectForKey:@"CFBundleVersion"]];
     
-    NSString *aboutTextFile = [myBundle pathForResource:@"AboutText" ofType:@"rtf"];
+    NSURL *aboutTextFile = [myBundle URLForResource:@"AboutText" withExtension:@"rtf"];
     NSScrollView *aboutTextScrollView = [aboutField enclosingScrollView];
-    [aboutField readRTFDFromFile:aboutTextFile];
+    [aboutField readRTFDFromFile:aboutTextFile.path];
     [aboutField setDrawsBackground:NO];
     [aboutField setTextContainerInset:NSZeroSize];
     [aboutField sizeToFit];

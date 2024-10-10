@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5518EF332CB5FE1500538A8A /* RCEnvironmentPref.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5518EF322CB5FE1500538A8A /* RCEnvironmentPref.xib */; };
+		552AC3652CB7ADCB00B8DEF9 /* KeyValuePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552AC3642CB7ADC200B8DEF9 /* KeyValuePair.swift */; };
 		552C1EB22CB5377E00F3B6E4 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 552C1EB12CB5377E00F3B6E4 /* InfoPlist.xcstrings */; };
 		552C1EB42CB5377E00F3B6E4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 552C1EB32CB5377E00F3B6E4 /* Localizable.xcstrings */; };
 		552C1EB62CB53B5C00F3B6E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552C1EB52CB53B5C00F3B6E4 /* Images.xcassets */; };
@@ -15,8 +16,6 @@
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
 		91D1DE2207514711001E0C2D /* RCKeyValueDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */; };
 		91D1DE2307514711001E0C2D /* RCKeyValueDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE1E07514711001E0C2D /* RCKeyValueDataSource.m */; };
-		91D1DE2407514711001E0C2D /* RCKeyValuePair.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE1F07514711001E0C2D /* RCKeyValuePair.h */; };
-		91D1DE2507514711001E0C2D /* RCKeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE2007514711001E0C2D /* RCKeyValuePair.m */; };
 		91D1DE2607514711001E0C2D /* RCMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE2107514711001E0C2D /* RCMacros.h */; };
 		91D1DE3807514923001E0C2D /* RCEnvironmentPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2E07514923001E0C2D /* RCEnvironmentPref.tiff */; };
 		91D1DE3907514923001E0C2D /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2F07514923001E0C2D /* README.rtf */; };
@@ -31,6 +30,8 @@
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5518EF312CB5FE1500538A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RCEnvironmentPref.xib; sourceTree = "<group>"; };
 		5518EF342CB5FE1500538A8A /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/RCEnvironmentPref.xcstrings; sourceTree = "<group>"; };
+		552AC3642CB7ADC200B8DEF9 /* KeyValuePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValuePair.swift; sourceTree = "<group>"; };
+		552AC3662CB7ADCD00B8DEF9 /* RCEnvironment-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCEnvironment-Bridging-Header.h"; sourceTree = "<group>"; };
 		552C1EB12CB5377E00F3B6E4 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		552C1EB32CB5377E00F3B6E4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		552C1EB52CB53B5C00F3B6E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -38,8 +39,6 @@
 		8D202CF80486D31800D8A456 /* RCEnvironment.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCEnvironment.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCKeyValueDataSource.h; sourceTree = "<group>"; };
 		91D1DE1E07514711001E0C2D /* RCKeyValueDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCKeyValueDataSource.m; sourceTree = "<group>"; };
-		91D1DE1F07514711001E0C2D /* RCKeyValuePair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCKeyValuePair.h; sourceTree = "<group>"; };
-		91D1DE2007514711001E0C2D /* RCKeyValuePair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCKeyValuePair.m; sourceTree = "<group>"; };
 		91D1DE2107514711001E0C2D /* RCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMacros.h; sourceTree = "<group>"; };
 		91D1DE2E07514923001E0C2D /* RCEnvironmentPref.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = RCEnvironmentPref.tiff; sourceTree = "<group>"; };
 		91D1DE2F07514923001E0C2D /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
@@ -110,9 +109,9 @@
 				91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */,
 				91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */,
 				91D1DE1E07514711001E0C2D /* RCKeyValueDataSource.m */,
-				91D1DE1F07514711001E0C2D /* RCKeyValuePair.h */,
-				91D1DE2007514711001E0C2D /* RCKeyValuePair.m */,
+				552AC3642CB7ADC200B8DEF9 /* KeyValuePair.swift */,
 				91D1DE2107514711001E0C2D /* RCMacros.h */,
+				552AC3662CB7ADCD00B8DEF9 /* RCEnvironment-Bridging-Header.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -142,7 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				91D1DE2207514711001E0C2D /* RCKeyValueDataSource.h in Headers */,
-				91D1DE2407514711001E0C2D /* RCKeyValuePair.h in Headers */,
 				91D1DE2607514711001E0C2D /* RCMacros.h in Headers */,
 				91D1DE5207514A09001E0C2D /* RCEnvironmentPref.h in Headers */,
 			);
@@ -178,6 +176,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					8D202CE80486D31800D8A456 = {
+						LastSwiftMigration = 1600;
+					};
+				};
 			};
 			buildConfigurationList = 9163AF7A09AB7D8C0031FE43 /* Build configuration list for PBXProject "RCEnvironment" */;
 			compatibilityVersion = "Xcode 12.0";
@@ -225,8 +228,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				91D1DE2307514711001E0C2D /* RCKeyValueDataSource.m in Sources */,
-				91D1DE2507514711001E0C2D /* RCKeyValuePair.m in Sources */,
 				91D1DE5307514A09001E0C2D /* RCEnvironmentPref.m in Sources */,
+				552AC3652CB7ADCB00B8DEF9 /* KeyValuePair.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +327,9 @@
 				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rubicode.preferences.RCEnvironment;
 				PRODUCT_NAME = RCEnvironment;
+				SWIFT_OBJC_BRIDGING_HEADER = "RCEnvironment-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Debug;
@@ -392,6 +398,8 @@
 				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rubicode.preferences.RCEnvironment;
 				PRODUCT_NAME = RCEnvironment;
+				SWIFT_OBJC_BRIDGING_HEADER = "RCEnvironment-Bridging-Header.h";
+				SWIFT_VERSION = 6.0;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Release;

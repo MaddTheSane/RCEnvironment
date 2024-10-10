@@ -9,7 +9,7 @@
 
 extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
 
-@class RCKeyValuePair;
+@class KeyValuePair;
 @protocol RCKeyValueDataSourceDelegate;
 
 @interface RCKeyValueDataSource : NSObject <NSTableViewDataSource>
@@ -25,7 +25,7 @@ extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
     IBOutlet NSText *editValue;
 
 @private
-    NSMutableArray<RCKeyValuePair*> *values;
+    NSMutableArray<KeyValuePair*> *values;
 
     NSString *bundleIdentifier;
 	

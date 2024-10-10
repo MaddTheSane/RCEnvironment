@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "BackupError" : {
-      "comment" : "Backup error label",
+      "comment" : "Backup file error",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -37,7 +37,7 @@
       }
     },
     "BackupFileNotWritable" : {
-      "comment" : "Backup error unable to write file, format string",
+      "comment" : "Backup error unable to write",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -108,7 +108,7 @@
       }
     },
     "Continue" : {
-      "comment" : "Continue label",
+      "comment" : "Continue",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -143,7 +143,7 @@
       }
     },
     "DefaultKey" : {
-      "comment" : "Default key label",
+      "comment" : "Default key",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -178,7 +178,7 @@
       }
     },
     "DefaultValue" : {
-      "comment" : "Default value label",
+      "comment" : "Default value",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -213,7 +213,7 @@
       }
     },
     "DollarValueWarning" : {
-      "comment" : "Value warning, $ variables aren't expanded",
+      "comment" : "Warning about using $ in values.",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -248,7 +248,7 @@
       }
     },
     "DontShowAgain" : {
-      "comment" : "Don't show again label",
+      "comment" : "Don't Show Again",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -289,7 +289,7 @@
       }
     },
     "FileDoesNotExist" : {
-      "comment" : "File does not exist format string, format string",
+      "comment" : "File does not exist",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -324,7 +324,7 @@
       }
     },
     "FileError" : {
-      "comment" : "File error label",
+      "comment" : "File error",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -359,7 +359,7 @@
       }
     },
     "FileIsNotFile" : {
-      "comment" : "File error: Is not a file, format string",
+      "comment" : "File is not a file",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -394,7 +394,7 @@
       }
     },
     "FileIsNotReadable" : {
-      "comment" : "File error: Is not readable, format string",
+      "comment" : "File is not readable",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -429,7 +429,7 @@
       }
     },
     "FileNotWritable" : {
-      "comment" : "File error: Can not write file",
+      "comment" : "File can not be written",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -464,7 +464,7 @@
       }
     },
     "InvalidKey" : {
-      "comment" : "Invalid Key label",
+      "comment" : "Invalid Key",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -499,7 +499,7 @@
       }
     },
     "KeyExists" : {
-      "comment" : "Invalid key, already exists",
+      "comment" : "Key already exists.",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -534,7 +534,7 @@
       }
     },
     "KeyWarning" : {
-      "comment" : "Key Warning label",
+      "comment" : "Key warning",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -569,7 +569,7 @@
       }
     },
     "PathKeyWarning" : {
-      "comment" : "Key warning, PATH variables can be bad",
+      "comment" : "Warning about using PATH",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -604,7 +604,7 @@
       }
     },
     "ValueWarning" : {
-      "comment" : "Value warning label",
+      "comment" : "Value warning",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -639,7 +639,7 @@
       }
     },
     "ZeroLengthKey" : {
-      "comment" : "Invalid Key, non-zero length",
+      "comment" : "Non-zero length strings only",
       "localizations" : {
         "de" : {
           "stringUnit" : {
