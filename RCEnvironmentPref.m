@@ -43,7 +43,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
 
 - (void)mainViewDidLoad
 {    
-    envDir = [[[[NSFileManager defaultManager] homeDirectoryForCurrentUser] URLByAppendingPathComponent:ENVIRONMENT_DIR] retain];
+    envDir = [[[NSFileManager defaultManager] homeDirectoryForCurrentUser] URLByAppendingPathComponent:ENVIRONMENT_DIR];
     
     [super mainViewDidLoad];
     
@@ -116,14 +116,11 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
             [alert beginSheetModalForWindow:prefWindow completionHandler:^(NSModalResponse returnCode) {
                 
             }];
-            [alert autorelease];
-        }
-        else {
+        } else {
             [keyValueDataSource setDictionary:nil];
             isDocumentDirty = NO;
         }
-    }
-    else {
+    } else {
         BOOL isError = NO;
 	
         if ( isDir ) {
@@ -133,7 +130,6 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
             [alert beginSheetModalForWindow:prefWindow completionHandler:^(NSModalResponse returnCode) {
                 
             }];
-            [alert autorelease];
             isError = YES;
         } else if ( ![fileManager isReadableFileAtPath:envFile.path] ) {
             NSAlert *alert = [[NSAlert alloc] init];
@@ -142,7 +138,6 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
             [alert beginSheetModalForWindow:prefWindow completionHandler:^(NSModalResponse returnCode) {
                 
             }];
-            [alert autorelease];
             isError = YES;
         } else {
             [keyValueDataSource setDictionary:[NSDictionary dictionaryWithContentsOfURL:envFile]];
@@ -191,7 +186,6 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
             [alert beginSheetModalForWindow:prefWindow completionHandler:^(NSModalResponse returnCode) {
                 
             }];
-            [alert autorelease];
         } else if ( ![fileManager isCreatableFileAtURL:envFile] ) {
             NSAlert *alert = [[NSAlert alloc] init];
             alert.messageText = RCLocalizedString(@"FileError", @"File error");
@@ -199,7 +193,6 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
             [alert beginSheetModalForWindow:prefWindow completionHandler:^(NSModalResponse returnCode) {
                 
             }];
-            [alert autorelease];
         } else {
             [[keyValueDataSource dictionary] writeToURL:envFile atomically:NO];
             isDocumentDirty = NO;

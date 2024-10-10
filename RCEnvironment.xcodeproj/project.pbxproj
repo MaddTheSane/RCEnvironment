@@ -21,7 +21,7 @@
 		91D1DE3907514923001E0C2D /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2F07514923001E0C2D /* README.rtf */; };
 		91D1DE4307514975001E0C2D /* AboutText.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE3F07514975001E0C2D /* AboutText.rtf */; };
 		91D1DE5207514A09001E0C2D /* RCEnvironmentPref.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE5007514A09001E0C2D /* RCEnvironmentPref.h */; };
-		91D1DE5307514A09001E0C2D /* RCEnvironmentPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		91D1DE5307514A09001E0C2D /* RCEnvironmentPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

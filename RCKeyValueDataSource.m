@@ -43,6 +43,14 @@ NSString * const RCKeyValueDataSourceChangedNotification = @"RCKeyValueDataSourc
 @end
 
 @implementation RCKeyValueDataSource
+{
+    NSMutableArray<KeyValuePair*> *values;
+    
+    NSInteger editRow;
+}
+@synthesize inspectWindow;
+@synthesize editKey;
+@synthesize editValue;
 
 - (id)init
 {

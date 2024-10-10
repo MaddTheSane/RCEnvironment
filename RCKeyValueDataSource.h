@@ -13,29 +13,18 @@ extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
 @protocol RCKeyValueDataSourceDelegate;
 
 @interface RCKeyValueDataSource : NSObject <NSTableViewDataSource>
-{
-    //! This can be directly hooked up to an NSTableView in IB
-    NSTableView *tableView;
-	
-    //! The inspector window
-    IBOutlet NSWindow *inspectWindow;
-    
-    // Fields on the inspector window
-    IBOutlet NSTextField *editKey;
-    IBOutlet NSText *editValue;
-
-@private
-    NSMutableArray<KeyValuePair*> *values;
-
-    NSString *bundleIdentifier;
-	
-    NSInteger editRow;
-}
 
 @property (copy) NSString *bundleIdentifier;
 
 //! This can be directly hooked up to an NSTableView in IB
 @property (nonatomic, strong) IBOutlet NSTableView *tableView;
+
+//! The inspector window
+@property (weak) IBOutlet NSWindow *inspectWindow;
+
+// Fields on the inspector window
+@property (weak) IBOutlet NSTextField *editKey;
+@property (weak) IBOutlet NSText *editValue;
 
 @property (nonatomic, copy) NSDictionary<NSString*,NSString*> *dictionary;
 
