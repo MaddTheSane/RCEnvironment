@@ -30,7 +30,7 @@
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5518EF312CB5FE1500538A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RCEnvironmentPref.xib; sourceTree = "<group>"; };
 		5518EF342CB5FE1500538A8A /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/RCEnvironmentPref.xcstrings; sourceTree = "<group>"; };
-		552AC3642CB7ADC200B8DEF9 /* KeyValuePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValuePair.swift; sourceTree = "<group>"; };
+		552AC3642CB7ADC200B8DEF9 /* KeyValuePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValuePair.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
 		552AC3662CB7ADCD00B8DEF9 /* RCEnvironment-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCEnvironment-Bridging-Header.h"; sourceTree = "<group>"; };
 		552C1EB12CB5377E00F3B6E4 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		552C1EB32CB5377E00F3B6E4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -75,6 +75,8 @@
 			);
 			name = RCEnvironment;
 			sourceTree = "<group>";
+			tabWidth = 8;
+			usesTabs = 0;
 		};
 		089C1671FE841209C02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -329,7 +331,8 @@
 				PRODUCT_NAME = RCEnvironment;
 				SWIFT_OBJC_BRIDGING_HEADER = "RCEnvironment-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 6.0;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Debug;
@@ -399,7 +402,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rubicode.preferences.RCEnvironment;
 				PRODUCT_NAME = RCEnvironment;
 				SWIFT_OBJC_BRIDGING_HEADER = "RCEnvironment-Bridging-Header.h";
-				SWIFT_VERSION = 6.0;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Release;

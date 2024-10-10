@@ -22,6 +22,12 @@
             "value" : "Errore Backup"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "バックアップエラー"
+          }
+        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "translated",
@@ -48,13 +54,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Can not write backup ~/%@/%@. Please correct and attempt again."
+            "value" : "Cannot write backup ~/%@/%@. Please correct and attempt again."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impossibile scrivere backup ~/%@/%@. Prego correggere e riprovare."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "バックアップを書き込むことができません ~/%@/%@.修正してもう一度試してください。"
           }
         },
         "zh_CN" : {
@@ -93,6 +105,12 @@
             "value" : "Annulla"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "中止する"
+          }
+        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "translated",
@@ -126,6 +144,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Continua"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "続ける"
           }
         },
         "zh_CN" : {
@@ -233,6 +257,12 @@
             "value" : "Fai attenzione al fatto che i valori di $<identifier> non vengono espansi quando viene letto il file di ambiente."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "環境ファイルを読み取ると、$<identifier>値が展開されないことに注意してください。"
+          }
+        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "translated",
@@ -309,6 +339,12 @@
             "value" : "~/%@/%@ non esiste, impossibile caricare."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "~/%@/%@は存在せず、ロードできません。"
+          }
+        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "translated",
@@ -342,6 +378,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Errore File"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ファイルエラー"
           }
         },
         "zh_CN" : {
@@ -379,6 +421,12 @@
             "value" : "~/%@/%@ è una directory, non un file."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "~/%@/%@はディレクトリであり、ファイルではありません。"
+          }
+        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "translated",
@@ -414,6 +462,12 @@
             "value" : "~/%@/%@ non è leggibile."
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "~/%@/%@は読めません。"
+          }
+        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "translated",
@@ -440,13 +494,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Can not write to ~/%@/%@. Please correct and attempt again."
+            "value" : "Cannot write to ~/%@/%@. Please correct and attempt again."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impossibile scrivere su ~/%@/%@. Prego correggere e riprovare."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "~/%@/%@ に書くことはできません。修正してもう一度試してください。"
           }
         },
         "zh_CN" : {
@@ -484,6 +544,12 @@
             "value" : "Chiave Non Valida"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "無効なキー"
+          }
+        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "translated",
@@ -517,6 +583,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La chiave esiste già."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "鍵はすでに存在します。"
           }
         },
         "zh_CN" : {
@@ -554,6 +626,12 @@
             "value" : "Avviso Chiave"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "重要な警告"
+          }
+        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "translated",
@@ -587,6 +665,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fai attenzione, impostare la variabile d'ambiente PATH può condizionare drasticamente il modo in cui funzionano alcune applicazioni, specialmente gli strumenti per sviluppatori e l'ambiente di shell."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "PATH環境変数を設定すると、特定のアプリケーション、特に開発者ツールとシェル環境の機能に劇的な影響を与える可能性があることに注意してください。"
           }
         },
         "zh_CN" : {
@@ -657,6 +741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La chiave deve essere una stringa di lunghezza diversa da zero."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "キーはゼロ以外の長さの文字列でなければなりません。"
           }
         },
         "zh_CN" : {

@@ -15,7 +15,7 @@ class KeyValuePair : NSObject {
     var value: String = ""
     
     @objc(keyValuePairWithKey:andValue:)
-    static func keyValuePairWith(key: String, andValue value: String) -> KeyValuePair {
+	static func keyValuePairWith(key: String, value: String) -> KeyValuePair {
         let val = KeyValuePair()
         val.key = key
         val.value = value
