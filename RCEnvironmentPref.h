@@ -7,9 +7,10 @@
 
 #import <Cocoa/Cocoa.h>
 #import <PreferencePanes/PreferencePanes.h>
-#import "RCKeyValueDataSource.h"
 
-@interface RCEnvironmentPref : NSPreferencePane 
+@class KeyValueDataSource;
+
+@interface RCEnvironmentPref : NSPreferencePane
 {
     // File save/revert/backup buttons
     IBOutlet NSButton *saveButton;
@@ -31,7 +32,7 @@
     IBOutlet NSTabView *tabView;
     
     // The data source for editing the page
-    IBOutlet RCKeyValueDataSource *keyValueDataSource;
+    IBOutlet KeyValueDataSource *keyValueDataSource;
     
 @private
     NSURL *envDir;

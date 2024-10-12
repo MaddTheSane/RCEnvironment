@@ -27,6 +27,7 @@
 
 #import "RCEnvironmentPref.h"
 #import "RCMacros.h"
+#import "RCEnvironment-Swift.h"
 
 static NSString *const ENVIRONMENT_DIR = @".MacOSX";
 static NSString *const ENVIRONMENT_FILE = @"environment.plist";
@@ -64,7 +65,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyValueDataSourceDidChange:)
-                                                 name:RCKeyValueDataSourceChangedNotification
+                                                 name:KeyValueDataSource.changedNotification
                                                object:keyValueDataSource];
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
@@ -117,7 +118,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
                 
             }];
         } else {
-            [keyValueDataSource setDictionary:nil];
+            [keyValueDataSource setDictionary:@{}];
             isDocumentDirty = NO;
         }
     } else {
@@ -145,7 +146,7 @@ static NSString *const ENVIRONMENT_BACKUP = @"environment~.plist";
         }
         
         if ( isError && isMainFile ) {
-            [keyValueDataSource setDictionary:nil];
+            [keyValueDataSource setDictionary:@{}];
             isDocumentDirty = NO;
         }
     }

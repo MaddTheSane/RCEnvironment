@@ -15,8 +15,6 @@
 		55CB509A2CBA4B730085E26A /* KeyValueDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */; };
 		8D202CF30486D31800D8A456 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
-		91D1DE2207514711001E0C2D /* RCKeyValueDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */; };
-		91D1DE2307514711001E0C2D /* RCKeyValueDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE1E07514711001E0C2D /* RCKeyValueDataSource.m */; };
 		91D1DE2607514711001E0C2D /* RCMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE2107514711001E0C2D /* RCMacros.h */; };
 		91D1DE3807514923001E0C2D /* RCEnvironmentPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2E07514923001E0C2D /* RCEnvironmentPref.tiff */; };
 		91D1DE3907514923001E0C2D /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2F07514923001E0C2D /* README.rtf */; };
@@ -39,8 +37,6 @@
 		55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueDataSource.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
 		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* RCEnvironment.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCEnvironment.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCKeyValueDataSource.h; sourceTree = "<group>"; };
-		91D1DE1E07514711001E0C2D /* RCKeyValueDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCKeyValueDataSource.m; sourceTree = "<group>"; };
 		91D1DE2107514711001E0C2D /* RCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMacros.h; sourceTree = "<group>"; };
 		91D1DE2E07514923001E0C2D /* RCEnvironmentPref.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = RCEnvironmentPref.tiff; sourceTree = "<group>"; };
 		91D1DE2F07514923001E0C2D /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
@@ -111,8 +107,6 @@
 			children = (
 				91D1DE5007514A09001E0C2D /* RCEnvironmentPref.h */,
 				91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */,
-				91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */,
-				91D1DE1E07514711001E0C2D /* RCKeyValueDataSource.m */,
 				55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */,
 				552AC3642CB7ADC200B8DEF9 /* KeyValuePair.swift */,
 				91D1DE2107514711001E0C2D /* RCMacros.h */,
@@ -145,7 +139,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91D1DE2207514711001E0C2D /* RCKeyValueDataSource.h in Headers */,
 				91D1DE2607514711001E0C2D /* RCMacros.h in Headers */,
 				91D1DE5207514A09001E0C2D /* RCEnvironmentPref.h in Headers */,
 			);
@@ -233,7 +226,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CB509A2CBA4B730085E26A /* KeyValueDataSource.swift in Sources */,
-				91D1DE2307514711001E0C2D /* RCKeyValueDataSource.m in Sources */,
 				91D1DE5307514A09001E0C2D /* RCEnvironmentPref.m in Sources */,
 				552AC3652CB7ADCB00B8DEF9 /* KeyValuePair.swift in Sources */,
 			);
