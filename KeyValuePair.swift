@@ -9,17 +9,22 @@ import Foundation
 
 @objcMembers
 class KeyValuePair : NSObject {
-    override init() { super.init() }
+	override convenience init() {
+		self.init(key: "", value: "")
+	}
     
+	init(key: String, value: String) {
+		self.key = key
+		self.value = value
+		super.init()
+	}
+	
     var key: String = ""
     var value: String = ""
     
     @objc(keyValuePairWithKey:andValue:)
 	static func keyValuePairWith(key: String, value: String) -> KeyValuePair {
-        let val = KeyValuePair()
-        val.key = key
-        val.value = value
-        return val
+		return KeyValuePair(key: key, value: value)
     }
     
     override var description: String {

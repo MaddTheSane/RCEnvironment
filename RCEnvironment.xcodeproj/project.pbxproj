@@ -12,6 +12,7 @@
 		552C1EB22CB5377E00F3B6E4 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 552C1EB12CB5377E00F3B6E4 /* InfoPlist.xcstrings */; };
 		552C1EB42CB5377E00F3B6E4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 552C1EB32CB5377E00F3B6E4 /* Localizable.xcstrings */; };
 		552C1EB62CB53B5C00F3B6E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552C1EB52CB53B5C00F3B6E4 /* Images.xcassets */; };
+		55CB509A2CBA4B730085E26A /* KeyValueDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */; };
 		8D202CF30486D31800D8A456 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
 		91D1DE2207514711001E0C2D /* RCKeyValueDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */; };
@@ -35,6 +36,7 @@
 		552C1EB12CB5377E00F3B6E4 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		552C1EB32CB5377E00F3B6E4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		552C1EB52CB53B5C00F3B6E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueDataSource.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
 		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* RCEnvironment.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCEnvironment.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCKeyValueDataSource.h; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */,
 				91D1DE1D07514711001E0C2D /* RCKeyValueDataSource.h */,
 				91D1DE1E07514711001E0C2D /* RCKeyValueDataSource.m */,
+				55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */,
 				552AC3642CB7ADC200B8DEF9 /* KeyValuePair.swift */,
 				91D1DE2107514711001E0C2D /* RCMacros.h */,
 				552AC3662CB7ADCD00B8DEF9 /* RCEnvironment-Bridging-Header.h */,
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55CB509A2CBA4B730085E26A /* KeyValueDataSource.swift in Sources */,
 				91D1DE2307514711001E0C2D /* RCKeyValueDataSource.m in Sources */,
 				91D1DE5307514A09001E0C2D /* RCEnvironmentPref.m in Sources */,
 				552AC3652CB7ADCB00B8DEF9 /* KeyValuePair.swift in Sources */,

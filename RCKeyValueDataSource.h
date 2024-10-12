@@ -12,7 +12,7 @@ extern NSNotificationName const RCKeyValueDataSourceChangedNotification;
 @class KeyValuePair;
 @protocol RCKeyValueDataSourceDelegate;
 
-@interface RCKeyValueDataSource : NSObject <NSTableViewDataSource>
+@interface RCKeyValueDataSource : NSObject <NSTableViewDataSource, NSControlTextEditingDelegate>
 
 @property (copy) NSString *bundleIdentifier;
 
