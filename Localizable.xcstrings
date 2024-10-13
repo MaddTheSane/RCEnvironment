@@ -43,7 +43,7 @@
       }
     },
     "BackupFileNotWritable" : {
-      "comment" : "Backup error unable to write",
+      "comment" : "Backup error unable to write, file, format string",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -126,7 +126,7 @@
       }
     },
     "Continue" : {
-      "comment" : "Continue",
+      "comment" : "Continue label",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -237,7 +237,7 @@
       }
     },
     "DollarValueWarning" : {
-      "comment" : "Warning about using $ in values.",
+      "comment" : "Value warning, $ variables aren't expanded",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -278,7 +278,7 @@
       }
     },
     "DontShowAgain" : {
-      "comment" : "Don't Show Again",
+      "comment" : "Don't show again label",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -319,7 +319,7 @@
       }
     },
     "FileDoesNotExist" : {
-      "comment" : "File does not exist",
+      "comment" : "File does not exist format string, format string",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -401,7 +401,7 @@
       }
     },
     "FileIsNotFile" : {
-      "comment" : "File is not a file",
+      "comment" : "File error: Is not a file, format string",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -442,7 +442,7 @@
       }
     },
     "FileIsNotReadable" : {
-      "comment" : "File is not readable",
+      "comment" : "File error: Is not readable, format string",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -483,7 +483,7 @@
       }
     },
     "FileNotWritable" : {
-      "comment" : "File can not be written",
+      "comment" : "File error: Can not write file",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -565,7 +565,7 @@
       }
     },
     "KeyExists" : {
-      "comment" : "Key already exists.",
+      "comment" : "Invalid key, already exists",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -647,7 +647,7 @@
       }
     },
     "PathKeyWarning" : {
-      "comment" : "Warning about using PATH",
+      "comment" : "Key warning, PATH variables can be bad",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -723,7 +723,7 @@
       }
     },
     "ZeroLengthKey" : {
-      "comment" : "Non-zero length strings only",
+      "comment" : "Invalid Key, non-zero length",
       "localizations" : {
         "de" : {
           "stringUnit" : {

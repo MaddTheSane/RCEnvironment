@@ -119,7 +119,7 @@ public class EnvironmentPref : NSPreferencePane {
 			if !isMainFile {
 				let alert = NSAlert()
 				alert.messageText = NSLocalizedString("FileError", bundle: myBundle, comment: "File error")
-				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileDoesNotExist", bundle: myBundle, comment: "File does not exist"), ENVIRONMENT_DIR, file)
+				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileDoesNotExist", bundle: myBundle, comment: "File does not exist format string, format string"), ENVIRONMENT_DIR, file)
 				alert.beginSheetModal(for: prefWindow!) { response in
 					
 				}
@@ -133,7 +133,7 @@ public class EnvironmentPref : NSPreferencePane {
 			if isDir.boolValue {
 				let alert = NSAlert()
 				alert.messageText = NSLocalizedString("FileError", bundle: myBundle, comment: "File error")
-				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileIsNotFile", bundle: myBundle, comment: "File is not a file"), ENVIRONMENT_DIR, file)
+				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileIsNotFile", bundle: myBundle, comment: "File error: Is not a file, format string"), ENVIRONMENT_DIR, file)
 				alert.beginSheetModal(for: prefWindow!) { response in
 					
 				}
@@ -141,7 +141,7 @@ public class EnvironmentPref : NSPreferencePane {
 			} else if !fileManager.isReadableFile(atPath: envFile.path) {
 				let alert = NSAlert()
 				alert.messageText = NSLocalizedString("FileError", bundle: myBundle, comment: "File error")
-				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileIsNotReadable", bundle: myBundle, comment: "File is not readable"), ENVIRONMENT_DIR, file)
+				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileIsNotReadable", bundle: myBundle, comment: "File error: Is not readable, format string"), ENVIRONMENT_DIR, file)
 				alert.beginSheetModal(for: prefWindow!) { response in
 					
 				}
@@ -188,14 +188,14 @@ public class EnvironmentPref : NSPreferencePane {
 		if !fileManager.fileExists(atPath: envFile.path) && ((try? fileManager.copyItem(at: backupFile, to: envFile)) == nil) {
 			let alert = NSAlert()
 			alert.messageText = NSLocalizedString("BackupError", bundle: myBundle, comment: "Backup file error")
-			alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("BackupFileNotWritable", bundle: myBundle, comment: "Backup error unable to write"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP)
+			alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("BackupFileNotWritable", bundle: myBundle, comment: "Backup error unable to write, file, format string"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP)
 			alert.beginSheetModal(for: prefWindow!) { response in
 				
 			}
 		} else if !fileManager.isCreatableFile(at: envFile) {
 			let alert = NSAlert()
 			alert.messageText = NSLocalizedString("FileError", bundle: myBundle, comment: "File error")
-			alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileNotWritable", bundle: myBundle, comment: "File can not be written"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP)
+			alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileNotWritable", bundle: myBundle, comment: "File error: Can not write file"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP)
 			alert.beginSheetModal(for: prefWindow!) { response in
 				
 			}

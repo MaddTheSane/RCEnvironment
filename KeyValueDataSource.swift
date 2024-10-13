@@ -246,9 +246,9 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 					let ourBundle = Bundle(for: KeyValueDataSource.self)
 					let alert = NSAlert()
 					alert.messageText = NSLocalizedString("ValueWarning", bundle: ourBundle, comment: "Value warning")
-					alert.informativeText = NSLocalizedString("DollarValueWarning", bundle: ourBundle, comment: "Warning about using $ in values.")
-					alert.addButton(withTitle: NSLocalizedString("Continue", bundle: ourBundle, comment: "Continue"))
-					alert.addButton(withTitle: NSLocalizedString("DontShowAgain", bundle: ourBundle, comment: "Don't Show Again"))
+					alert.informativeText = NSLocalizedString("DollarValueWarning", bundle: ourBundle, comment: "Value warning, $ variables aren't expanded")
+					alert.addButton(withTitle: NSLocalizedString("Continue", bundle: ourBundle, comment: "Continue label"))
+					alert.addButton(withTitle: NSLocalizedString("DontShowAgain", bundle: ourBundle, comment: "Don't show again label"))
 					alert.beginSheetModal(for: tableView.window!) { response in
 						if response == .alertSecondButtonReturn {
 							UserDefaults.standard.set(true, forKey: defaultsKey)
@@ -262,7 +262,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 		else if object.isEmpty {
 			let alert = NSAlert()
 			alert.messageText = NSLocalizedString("InvalidKey", bundle: Bundle(for: KeyValueDataSource.self), comment: "Invalid Key")
-			alert.informativeText = NSLocalizedString("ZeroLengthKey", bundle: Bundle(for: KeyValueDataSource.self), comment: "Non-zero length strings only")
+			alert.informativeText = NSLocalizedString("ZeroLengthKey", bundle: Bundle(for: KeyValueDataSource.self), comment: "Invalid Key, non-zero length")
 			alert.beginSheetModal(for: tableView.window!)
 			return false
 		}
@@ -270,7 +270,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 		else if values[tableView.editedRow].key == object, keyExistsAlready(object) {
 			let alert = NSAlert()
 			alert.messageText = NSLocalizedString("InvalidKey", bundle: Bundle(for: KeyValueDataSource.self), comment: "Invalid Key")
-			alert.informativeText = NSLocalizedString("KeyExists", bundle: Bundle(for: KeyValueDataSource.self), comment: "Key already exists.")
+			alert.informativeText = NSLocalizedString("KeyExists", bundle: Bundle(for: KeyValueDataSource.self), comment: "Invalid key, already exists")
 			alert.beginSheetModal(for: tableView.window!)
 			return false
 		}
@@ -283,9 +283,9 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 				let ourBundle = Bundle(for: KeyValueDataSource.self)
 				let alert = NSAlert()
 				alert.messageText = NSLocalizedString("KeyWarning", bundle: ourBundle, comment: "Key warning")
-				alert.informativeText = NSLocalizedString("PathKeyWarning", bundle: ourBundle, comment: "Warning about using PATH")
-				alert.addButton(withTitle: NSLocalizedString("Continue", bundle: ourBundle, comment: "Continue"))
-				alert.addButton(withTitle: NSLocalizedString("DontShowAgain", bundle: ourBundle, comment: "Don't Show Again"))
+				alert.informativeText = NSLocalizedString("PathKeyWarning", bundle: ourBundle, comment: "Key warning, PATH variables can be bad")
+				alert.addButton(withTitle: NSLocalizedString("Continue", bundle: ourBundle, comment: "Continue label"))
+				alert.addButton(withTitle: NSLocalizedString("DontShowAgain", bundle: ourBundle, comment: "Don't show again label"))
 				alert.beginSheetModal(for: tableView.window!) { response in
 					if response == .alertSecondButtonReturn {
 						UserDefaults.standard.set(true, forKey: defaultsKey)
