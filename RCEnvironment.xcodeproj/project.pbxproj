@@ -12,13 +12,13 @@
 		552C1EB22CB5377E00F3B6E4 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 552C1EB12CB5377E00F3B6E4 /* InfoPlist.xcstrings */; };
 		552C1EB42CB5377E00F3B6E4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 552C1EB32CB5377E00F3B6E4 /* Localizable.xcstrings */; };
 		552C1EB62CB53B5C00F3B6E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552C1EB52CB53B5C00F3B6E4 /* Images.xcassets */; };
+		55438B112CBBA8BE00B46CA5 /* EnvironmentPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55438B102CBBA8B000B46CA5 /* EnvironmentPref.swift */; };
 		55CB509A2CBA4B730085E26A /* KeyValueDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */; };
 		8D202CF30486D31800D8A456 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
 		91D1DE3807514923001E0C2D /* RCEnvironmentPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2E07514923001E0C2D /* RCEnvironmentPref.tiff */; };
 		91D1DE3907514923001E0C2D /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2F07514923001E0C2D /* README.rtf */; };
 		91D1DE4307514975001E0C2D /* AboutText.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE3F07514975001E0C2D /* AboutText.rtf */; };
-		91D1DE5307514A09001E0C2D /* RCEnvironmentPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,12 +27,13 @@
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5518EF312CB5FE1500538A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RCEnvironmentPref.xib; sourceTree = "<group>"; };
 		5518EF342CB5FE1500538A8A /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/RCEnvironmentPref.xcstrings; sourceTree = "<group>"; };
-		552AC3642CB7ADC200B8DEF9 /* KeyValuePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValuePair.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
+		552AC3642CB7ADC200B8DEF9 /* KeyValuePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValuePair.swift; sourceTree = "<group>"; };
 		552AC3662CB7ADCD00B8DEF9 /* RCEnvironment-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCEnvironment-Bridging-Header.h"; sourceTree = "<group>"; };
 		552C1EB12CB5377E00F3B6E4 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		552C1EB32CB5377E00F3B6E4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		552C1EB52CB53B5C00F3B6E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueDataSource.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
+		55438B102CBBA8B000B46CA5 /* EnvironmentPref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentPref.swift; sourceTree = "<group>"; };
+		55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueDataSource.swift; sourceTree = "<group>"; };
 		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* RCEnvironment.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCEnvironment.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D1DE2107514711001E0C2D /* RCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMacros.h; sourceTree = "<group>"; };
@@ -42,8 +43,6 @@
 		91D1DE470751499F001E0C2D /* it */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = it; path = it.lproj/AboutText.rtf; sourceTree = "<group>"; };
 		91D1DE4A075149B5001E0C2D /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = zh_CN; path = zh_CN.lproj/AboutText.rtf; sourceTree = "<group>"; };
 		91D1DE4D075149CF001E0C2D /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = zh_TW; path = zh_TW.lproj/AboutText.rtf; sourceTree = "<group>"; };
-		91D1DE5007514A09001E0C2D /* RCEnvironmentPref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCEnvironmentPref.h; sourceTree = "<group>"; };
-		91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCEnvironmentPref.m; sourceTree = "<group>"; };
 		D3775A8910660F6600D6D5D6 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/AboutText.rtf; sourceTree = "<group>"; };
 		F506C035013D953901CA16C8 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -71,8 +70,8 @@
 			);
 			name = RCEnvironment;
 			sourceTree = "<group>";
-			tabWidth = 8;
-			usesTabs = 0;
+			tabWidth = 4;
+			usesTabs = 1;
 		};
 		089C1671FE841209C02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -103,8 +102,7 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				91D1DE5007514A09001E0C2D /* RCEnvironmentPref.h */,
-				91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */,
+				55438B102CBBA8B000B46CA5 /* EnvironmentPref.swift */,
 				55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */,
 				552AC3642CB7ADC200B8DEF9 /* KeyValuePair.swift */,
 				91D1DE2107514711001E0C2D /* RCMacros.h */,
@@ -112,7 +110,6 @@
 			);
 			name = Classes;
 			sourceTree = "<group>";
-			usesTabs = 0;
 		};
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
@@ -211,7 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CB509A2CBA4B730085E26A /* KeyValueDataSource.swift in Sources */,
-				91D1DE5307514A09001E0C2D /* RCEnvironmentPref.m in Sources */,
+				55438B112CBBA8BE00B46CA5 /* EnvironmentPref.swift in Sources */,
 				552AC3652CB7ADCB00B8DEF9 /* KeyValuePair.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +287,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -305,13 +303,12 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2003-2006 by Doug McClure";
 				INFOPLIST_KEY_NSMainNibFile = RCEnvironmentPref;
-				INFOPLIST_KEY_NSPrincipalClass = RCEnvironmentPref;
+				INFOPLIST_KEY_NSPrincipalClass = "$(PRODUCT_MODULE_NAME).EnvironmentPref";
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
 				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rubicode.preferences.RCEnvironment;
 				PRODUCT_NAME = RCEnvironment;
 				SWIFT_OBJC_BRIDGING_HEADER = "RCEnvironment-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = prefPane;
@@ -377,7 +374,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2003-2006 by Doug McClure";
 				INFOPLIST_KEY_NSMainNibFile = RCEnvironmentPref;
-				INFOPLIST_KEY_NSPrincipalClass = RCEnvironmentPref;
+				INFOPLIST_KEY_NSPrincipalClass = "$(PRODUCT_MODULE_NAME).EnvironmentPref";
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
 				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rubicode.preferences.RCEnvironment;

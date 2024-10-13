@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="RCEnvironmentPref">
+        <customObject id="-2" userLabel="File's Owner" customClass="EnvironmentPref" customModule="RCEnvironment" customModuleProvider="target">
             <connections>
                 <outlet property="_window" destination="223" id="287"/>
                 <outlet property="aboutField" destination="258" id="281"/>
@@ -16,7 +16,6 @@
                 <outlet property="keyValueDataSource" destination="140" id="144"/>
                 <outlet property="removeButton" destination="334" id="367"/>
                 <outlet property="saveButton" destination="sFs-Dq-jhv" id="325"/>
-                <outlet property="tabView" destination="225" id="286"/>
                 <outlet property="tableView" destination="269" id="373"/>
                 <outlet property="versionField" destination="253" id="277"/>
             </connections>
