@@ -34,9 +34,9 @@
 		552C1EB52CB53B5C00F3B6E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		55438B102CBBA8B000B46CA5 /* EnvironmentPref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentPref.swift; sourceTree = "<group>"; };
 		55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueDataSource.swift; sourceTree = "<group>"; };
+		55D160B62CBC70CF000AF9D8 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* RCEnvironment.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCEnvironment.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
-		91D1DE2107514711001E0C2D /* RCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMacros.h; sourceTree = "<group>"; };
 		91D1DE2E07514923001E0C2D /* RCEnvironmentPref.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = RCEnvironmentPref.tiff; sourceTree = "<group>"; };
 		91D1DE2F07514923001E0C2D /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		91D1DE4007514975001E0C2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/AboutText.rtf; sourceTree = "<group>"; };
@@ -93,6 +93,7 @@
 				8D202CF70486D31800D8A456 /* Info.plist */,
 				91D1DE3F07514975001E0C2D /* AboutText.rtf */,
 				91D1DE2F07514923001E0C2D /* README.rtf */,
+				55D160B62CBC70CF000AF9D8 /* readme.md */,
 				552C1EB12CB5377E00F3B6E4 /* InfoPlist.xcstrings */,
 				552C1EB32CB5377E00F3B6E4 /* Localizable.xcstrings */,
 			);
@@ -105,7 +106,6 @@
 				55438B102CBBA8B000B46CA5 /* EnvironmentPref.swift */,
 				55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */,
 				552AC3642CB7ADC200B8DEF9 /* KeyValuePair.swift */,
-				91D1DE2107514711001E0C2D /* RCMacros.h */,
 				552AC3662CB7ADCD00B8DEF9 /* RCEnvironment-Bridging-Header.h */,
 			);
 			name = Classes;
@@ -278,11 +278,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				LOCALIZED_STRING_MACRO_NAMES = (
-					NSLocalizedString,
-					CFCopyLocalizedString,
-					RCLocalizedString,
-				);
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -351,11 +346,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				LOCALIZED_STRING_MACRO_NAMES = (
-					NSLocalizedString,
-					CFCopyLocalizedString,
-					RCLocalizedString,
-				);
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
