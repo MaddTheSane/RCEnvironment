@@ -107,6 +107,7 @@ public class EnvironmentPref : NSPreferencePane {
 		}
 	}
 
+	@MainActor
 	private func loadEnvironmentFile(_ file: String, isMainFile: Bool) {
 		let myBundle = Bundle(for: type(of: self))
 		let fileManager = FileManager.default

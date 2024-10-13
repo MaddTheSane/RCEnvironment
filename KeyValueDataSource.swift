@@ -67,6 +67,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 	
 	private var editRow = -1
 	
+	@MainActor
 	var dictionary: [String : String]! {
 		get {
 			var dictionary: [String: String] = [:]
@@ -83,8 +84,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 			values.reserveCapacity(dict2.count)
 			
 			for (key, value) in dict2 {
-				let pair = KeyValuePair(key: key, value: value)
-				values.append(pair)
+				values.append(KeyValuePair(key: key, value: value))
 			}
 			
 			_sortKeys()
@@ -185,7 +185,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 		perform(#selector(_sortKeys), with: nil, afterDelay: 0)
 	}
 	
-	@objc 
+	@objc @MainActor
 	private func _sortKeys() {
 		if editRow == -1 && tableView?.editedRow == -1 {
 			var selectedKey: String? = nil
@@ -203,7 +203,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 		}
 	}
 	
-	// MARK: - Table datasource methods
+	// MARK: - NSTable datasource methods
 
 	func numberOfRows(in tableView: NSTableView) -> Int {
 		return values.count
