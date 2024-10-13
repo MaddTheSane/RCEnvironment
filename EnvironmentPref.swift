@@ -101,9 +101,8 @@ public class EnvironmentPref : NSPreferencePane {
 			var isDir: ObjCBool = false
 			let fileManager = FileManager.default
 			let backupFile = envDir!.appendingPathComponent(ENVIRONMENT_BACKUP)
-			backupButton.isEnabled = fileManager.fileExists(atPath: backupFile.path, isDirectory: &isDir) &&
-			!isDir.boolValue &&
-			!fileManager.isReadableFile(atPath: backupFile.path)
+			backupButton.isEnabled = (fileManager.fileExists(atPath: backupFile.path, isDirectory: &isDir) &&
+									  !isDir.boolValue)
 		}
 	}
 

@@ -50,7 +50,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="169" translatesAutoresizingMaskIntoConstraints="NO" id="264">
-                                            <rect key="frame" x="76" y="-2" width="173" height="30"/>
+                                            <rect key="frame" x="80" y="-2" width="173" height="30"/>
                                             <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" title="Changes will take effect on your next login." id="375">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -63,14 +63,14 @@
                                                 <rect key="frame" x="1" y="1" width="529" height="278"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" autosaveColumns="NO" headerView="392" id="269">
+                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" autosaveColumns="NO" usesAutomaticRowHeights="YES" headerView="392" id="269">
                                                         <rect key="frame" x="0.0" y="0.0" width="529" height="250"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                         <tableColumns>
-                                                            <tableColumn identifier="key" width="117" minWidth="40" maxWidth="1000" id="270">
+                                                            <tableColumn identifier="key" width="144" minWidth="40" maxWidth="1000" id="270">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Variable">
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" white="0.33333333999999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,7 +82,7 @@
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             </tableColumn>
-                                                            <tableColumn identifier="value" width="368" minWidth="37.401000000000003" maxWidth="1000" id="265">
+                                                            <tableColumn identifier="value" width="339" minWidth="37.401000000000003" maxWidth="1000" id="265">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Value">
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" white="0.33333333999999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -189,7 +189,6 @@
                                         <constraint firstItem="267" firstAttribute="centerX" secondItem="228" secondAttribute="centerX" id="G2I-cd-npq"/>
                                         <constraint firstItem="333" firstAttribute="top" secondItem="267" secondAttribute="bottom" constant="8" symbolic="YES" id="GQd-7o-H8O"/>
                                         <constraint firstAttribute="trailing" secondItem="sFs-Dq-jhv" secondAttribute="trailing" constant="7" id="KKE-BN-QeK"/>
-                                        <constraint firstItem="264" firstAttribute="leading" secondItem="334" secondAttribute="trailing" constant="26" id="KrH-99-Owv"/>
                                         <constraint firstItem="334" firstAttribute="top" secondItem="338" secondAttribute="top" id="L0h-uZ-13C"/>
                                         <constraint firstItem="55I-md-ZAi" firstAttribute="firstBaseline" secondItem="268" secondAttribute="firstBaseline" id="MRF-T7-ie7"/>
                                         <constraint firstItem="268" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="264" secondAttribute="trailing" constant="8" symbolic="YES" id="Mca-T9-znJ"/>
@@ -204,7 +203,7 @@
                                         <constraint firstItem="333" firstAttribute="top" secondItem="334" secondAttribute="top" id="i2x-zz-7O2"/>
                                         <constraint firstItem="264" firstAttribute="top" secondItem="267" secondAttribute="bottom" constant="6" id="iJu-3a-hvg"/>
                                         <constraint firstItem="55I-md-ZAi" firstAttribute="firstBaseline" secondItem="sFs-Dq-jhv" secondAttribute="firstBaseline" id="kya-dZ-bLx"/>
-                                        <constraint firstItem="264" firstAttribute="leading" secondItem="338" secondAttribute="trailing" constant="4" id="nfp-fx-pno"/>
+                                        <constraint firstItem="264" firstAttribute="leading" secondItem="338" secondAttribute="trailing" constant="8" symbolic="YES" id="nfp-fx-pno"/>
                                         <constraint firstItem="334" firstAttribute="leading" secondItem="228" secondAttribute="leading" constant="29" id="niI-T9-FDO"/>
                                         <constraint firstItem="267" firstAttribute="leading" secondItem="228" secondAttribute="leading" constant="7" id="oc3-M2-d2z"/>
                                         <constraint firstItem="268" firstAttribute="top" secondItem="267" secondAttribute="bottom" constant="9" id="qvy-zj-lRq"/>
@@ -363,7 +362,7 @@
                         <rect key="frame" x="20" y="60" width="440" height="142"/>
                         <clipView key="contentView" id="jRP-LC-WRH">
                             <rect key="frame" x="1" y="1" width="438" height="140"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <textView wantsLayer="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="343">
                                     <rect key="frame" x="0.0" y="0.0" width="438" height="140"/>
