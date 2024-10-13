@@ -190,7 +190,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 		if editRow == -1 && tableView?.editedRow == -1 {
 			var selectedKey: String? = nil
 			
-			if let selectedRow = tableView?.selectedRow {
+			if let selectedRow = tableView?.selectedRow, selectedRow != -1 {
 				selectedKey = values[selectedRow].key
 			}
 			
