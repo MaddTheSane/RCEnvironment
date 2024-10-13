@@ -69,7 +69,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 	private var editRow = -1
 	
 	@objc
-	open var dictionary: [String : String] {
+	open var dictionary: [String : String]! {
 		get {
 			var dictionary: [String: String] = [:]
 			dictionary.reserveCapacity(values.count)
@@ -80,10 +80,11 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 			return dictionary
 		}
 		set {
+			let dict2 = newValue ?? [:]
 			values.removeAll()
-			values.reserveCapacity(newValue.count)
+			values.reserveCapacity(dict2.count)
 			
-			for (key, value) in newValue {
+			for (key, value) in dict2 {
 				let pair = KeyValuePair(key: key, value: value)
 				values.append(pair)
 			}
