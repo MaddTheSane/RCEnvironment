@@ -185,7 +185,7 @@ public class EnvironmentPref : NSPreferencePane {
 		// Remove backup file, ignore error if could not remove it, will deal with that below
 		try? fileManager.removeItem(at: backupFile)
 		
-		if !fileManager.fileExists(atPath: envFile.path) && ((try? fileManager.copyItem(at: backupFile, to: envFile)) == nil) {
+		if fileManager.fileExists(atPath: envFile.path) && ((try? fileManager.copyItem(at: envFile, to: backupFile)) == nil) {
 			let alert = NSAlert()
 			alert.messageText = NSLocalizedString("BackupError", bundle: myBundle, comment: "Backup file error")
 			alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("BackupFileNotWritable", bundle: myBundle, comment: "Backup error unable to write, file, format string"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP)
