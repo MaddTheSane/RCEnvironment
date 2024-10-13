@@ -34,9 +34,9 @@ private let KEY_COLUMN_ID = NSUserInterfaceItemIdentifier(rawValue: "key")
 
 
 class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditingDelegate {
-	@objc public static let changedNotification = NSNotification.Name(rawValue: "RCKeyValueDataSourceChangedNotification")
+	public static let changedNotification = NSNotification.Name(rawValue: "RCKeyValueDataSourceChangedNotification")
 	
-	@objc var bundleIdentifier: String!
+	var bundleIdentifier: String!
 	
 	/// This can be directly hooked up to an NSTableView in IB
 	@IBOutlet var tableView: NSTableView! {
@@ -63,11 +63,10 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 	@IBOutlet weak var editKey: NSTextField!
 	@IBOutlet weak var editValue: NSText!
 	
-	private var values: [KeyValuePair] = []
+	private var values = [KeyValuePair]()
 	
 	private var editRow = -1
 	
-	@objc
 	var dictionary: [String : String]! {
 		get {
 			var dictionary: [String: String] = [:]
@@ -104,7 +103,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 		return index(ofKey: aKey) != nil
 	}
 	
-	@IBAction open func addItem(_ sender: Any!) {
+	@IBAction func addItem(_ sender: Any!) {
 		guard _endEditing() else {
 			return
 		}
@@ -130,7 +129,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 		NotificationCenter.default.post(name: KeyValueDataSource.changedNotification, object: self)
 	}
 	
-	@IBAction open func removeItems(_ sender: Any!) {
+	@IBAction func removeItems(_ sender: Any!) {
 		guard _endEditing() else {
 			return
 		}
@@ -145,7 +144,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 		}
 	}
 	
-	@IBAction open func editItem(_ sender: Any!) {
+	@IBAction func editItem(_ sender: Any!) {
 		guard _endEditing() else {
 			return
 		}
@@ -169,7 +168,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 		}
 	}
 	
-	@IBAction open func endEditItem(_ sender: NSControl!) {
+	@IBAction func endEditItem(_ sender: NSControl!) {
 		tableView.window?.endSheet(inspectWindow, returnCode: sender.tag == 1 ? .alertFirstButtonReturn : .alertSecondButtonReturn)
 		inspectWindow.close()
 	}

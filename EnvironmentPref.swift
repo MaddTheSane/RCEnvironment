@@ -59,10 +59,6 @@ public class EnvironmentPref : NSPreferencePane {
 	private var prefWindow: NSWindow? = nil
 	private var isDocumentDirty: Bool = false
 	
-	public override var mainNibName: String {
-		return "RCEnvironmentPref"
-	}
-	
 	public override func mainViewDidLoad() {
 		envDir = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(ENVIRONMENT_DIR) 
 
@@ -131,7 +127,7 @@ public class EnvironmentPref : NSPreferencePane {
 				isDocumentDirty = false
 			}
 		} else {
-			var isError: ObjCBool = false
+			var isError = false
 			
 			if isDir.boolValue {
 				let alert = NSAlert()
@@ -154,7 +150,7 @@ public class EnvironmentPref : NSPreferencePane {
 				isDocumentDirty = !isMainFile
 			}
 			
-			if isError.boolValue, isMainFile {
+			if isError, isMainFile {
 				keyValueDataSource.dictionary = [:]
 				isDocumentDirty = false
 			}
