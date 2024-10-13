@@ -25,7 +25,6 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="140" userLabel="KeyValueDataSource" customClass="KeyValueDataSource" customModule="RCEnvironment" customModuleProvider="target">
             <connections>
-                <outlet property="delegate" destination="-2" id="222"/>
                 <outlet property="editKey" destination="361" id="362"/>
                 <outlet property="editValue" destination="343" id="358"/>
                 <outlet property="inspectWindow" destination="340" id="357"/>

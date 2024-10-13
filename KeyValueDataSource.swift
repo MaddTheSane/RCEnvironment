@@ -36,10 +36,10 @@ private let KEY_COLUMN_ID = NSUserInterfaceItemIdentifier(rawValue: "key")
 class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditingDelegate {
 	@objc public static let changedNotification = NSNotification.Name(rawValue: "RCKeyValueDataSourceChangedNotification")
 	
-	@objc open var bundleIdentifier: String!
+	@objc var bundleIdentifier: String!
 	
 	/// This can be directly hooked up to an NSTableView in IB
-	@IBOutlet open var tableView: NSTableView! {
+	@IBOutlet var tableView: NSTableView! {
 		willSet {
 			if let tableView {
 				NotificationCenter.default.removeObserver(self,
@@ -58,18 +58,17 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 	}
 	
 	/// The inspector window
-	@IBOutlet weak open var inspectWindow: NSWindow!
+	@IBOutlet weak var inspectWindow: NSWindow!
 	
-	@IBOutlet weak open var editKey: NSTextField!
-	
-	@IBOutlet weak open var editValue: NSText!
+	@IBOutlet weak var editKey: NSTextField!
+	@IBOutlet weak var editValue: NSText!
 	
 	private var values: [KeyValuePair] = []
 	
 	private var editRow = -1
 	
 	@objc
-	open var dictionary: [String : String]! {
+	var dictionary: [String : String]! {
 		get {
 			var dictionary: [String: String] = [:]
 			dictionary.reserveCapacity(values.count)
@@ -132,39 +131,41 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 	}
 	
 	@IBAction open func removeItems(_ sender: Any!) {
-		if _endEditing() {
-			let selectedRows = tableView.selectedRowIndexes
+		guard _endEditing() else {
+			return
+		}
+		let selectedRows = tableView.selectedRowIndexes
+		
+		if !selectedRows.isEmpty {
+			values.remove(atOffsets: selectedRows)
 			
-			if selectedRows.count > 0 {
-				values.remove(atOffsets: selectedRows)
-				
-				tableView.reloadData()
-				
-				NotificationCenter.default.post(name: KeyValueDataSource.changedNotification, object: self)
-			}
+			tableView.reloadData()
+			
+			NotificationCenter.default.post(name: KeyValueDataSource.changedNotification, object: self)
 		}
 	}
 	
 	@IBAction open func editItem(_ sender: Any!) {
-		if _endEditing() {
-			tableView.window?.endEditing(for: tableView)
+		guard _endEditing() else {
+			return
+		}
+		tableView.window?.endEditing(for: tableView)
+		
+		editRow = tableView.selectedRow
+		
+		if editRow != -1 {
+			let data = values[editRow]
+			editKey.stringValue = data.key
+			editValue.string = data.value
 			
-			editRow = tableView.selectedRow
-			
-			if editRow != -1 {
-				let data = values[editRow]
-				editKey.stringValue = data.key
-				editValue.string = data.value
+			tableView.window?.beginSheet(inspectWindow, completionHandler: { (returnCode) in
+				if returnCode == .alertFirstButtonReturn {
+					self.values[self.editRow].value = self.editValue.string
+				}
 				
-				tableView.window?.beginSheet(inspectWindow, completionHandler: { (returnCode) in
-					if returnCode == .alertFirstButtonReturn {
-						self.values[self.editRow].value = self.editValue.string
-					}
-					
-					self.editRow = -1;
-					self._sortKeys() 
-				})
-			}
+				self.editRow = -1
+				self._sortKeys()
+			})
 		}
 	}
 	
@@ -231,7 +232,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 		NotificationCenter.default.post(name: KeyValueDataSource.changedNotification, object: self)
 	}
 	
-	// MARK: - Delegate methods
+	// MARK: - NSControl Delegate methods
 
 	func control(_ control: NSControl, isValidObject: Any?) -> Bool {
 		guard let object = isValidObject as? String else {

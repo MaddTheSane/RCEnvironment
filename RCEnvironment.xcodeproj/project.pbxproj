@@ -15,11 +15,9 @@
 		55CB509A2CBA4B730085E26A /* KeyValueDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB50992CBA4B6A0085E26A /* KeyValueDataSource.swift */; };
 		8D202CF30486D31800D8A456 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
-		91D1DE2607514711001E0C2D /* RCMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE2107514711001E0C2D /* RCMacros.h */; };
 		91D1DE3807514923001E0C2D /* RCEnvironmentPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2E07514923001E0C2D /* RCEnvironmentPref.tiff */; };
 		91D1DE3907514923001E0C2D /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE2F07514923001E0C2D /* README.rtf */; };
 		91D1DE4307514975001E0C2D /* AboutText.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91D1DE3F07514975001E0C2D /* AboutText.rtf */; };
-		91D1DE5207514A09001E0C2D /* RCEnvironmentPref.h in Headers */ = {isa = PBXBuildFile; fileRef = 91D1DE5007514A09001E0C2D /* RCEnvironmentPref.h */; };
 		91D1DE5307514A09001E0C2D /* RCEnvironmentPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D1DE5107514A09001E0C2D /* RCEnvironmentPref.m */; };
 /* End PBXBuildFile section */
 
@@ -134,24 +132,11 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		8D202CE90486D31800D8A456 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				91D1DE2607514711001E0C2D /* RCMacros.h in Headers */,
-				91D1DE5207514A09001E0C2D /* RCEnvironmentPref.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		8D202CE80486D31800D8A456 /* RCEnvironment */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9163AF7609AB7D8C0031FE43 /* Build configuration list for PBXNativeTarget "RCEnvironment" */;
 			buildPhases = (
-				8D202CE90486D31800D8A456 /* Headers */,
 				8D202CEC0486D31800D8A456 /* Resources */,
 				8D202CF00486D31800D8A456 /* Sources */,
 				8D202CF20486D31800D8A456 /* Frameworks */,
