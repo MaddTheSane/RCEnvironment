@@ -7,27 +7,16 @@
 
 import Foundation
 
-@objcMembers
-class KeyValuePair : NSObject {
-	override convenience init() {
-		self.init(key: "", value: "")
-	}
-    
+struct KeyValuePair: CustomStringConvertible {    
 	init(key: String, value: String) {
 		self.key = key
 		self.value = value
-		super.init()
 	}
 	
     var key: String = ""
     var value: String = ""
     
-    @objc(keyValuePairWithKey:andValue:)
-	static func keyValuePairWith(key: String, value: String) -> KeyValuePair {
-		return KeyValuePair(key: key, value: value)
-    }
-    
-    override var description: String {
+	var description: String {
         return "key:\(key), value:\(value)"
     }
     
