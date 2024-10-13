@@ -127,7 +127,7 @@
                                         </button>
                                         <button toolTip="Add a variable" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="333" userLabel="Add">
                                             <rect key="frame" x="7" y="4" width="23" height="22"/>
-                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="377">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="377">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -137,7 +137,7 @@
                                         </button>
                                         <button toolTip="Remove variables" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="334" userLabel="Remove">
                                             <rect key="frame" x="29" y="4" width="23" height="22"/>
-                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="378">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="378">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -147,7 +147,7 @@
                                         </button>
                                         <button toolTip="Edit variable value" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="338" userLabel="Inspect">
                                             <rect key="frame" x="51" y="4" width="23" height="22"/>
-                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="info" catalog="system" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="379">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="info" catalog="system" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="379">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
