@@ -160,6 +160,7 @@ class KeyValueDataSource : NSObject, NSTableViewDataSource, NSControlTextEditing
 			tableView.window?.beginSheet(inspectWindow, completionHandler: { (returnCode) in
 				if returnCode == .alertFirstButtonReturn {
 					self.values[self.editRow].value = self.editValue.string
+					NotificationCenter.default.post(name: KeyValueDataSource.changedNotification, object: self)
 				}
 				
 				self.editRow = -1
