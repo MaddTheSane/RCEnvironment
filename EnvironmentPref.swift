@@ -64,13 +64,11 @@ public class EnvironmentPref : NSPreferencePane {
 
 		super.mainViewDidLoad()
 		
-		let myBundle = Bundle(for: type(of: self))
-		
-		let infoDictionary = myBundle.infoDictionary!
+		let infoDictionary = bundle.infoDictionary!
 		keyValueDataSource.bundleIdentifier = infoDictionary["CFBundleIdentifier"] as? String
 		versionField.stringValue = infoDictionary["CFBundleVersion"] as? String ?? "unknown"
 		
-		if let aboutTextFile = myBundle.url(forResource: "AboutText", withExtension: "rtf") {
+		if let aboutTextFile = bundle.url(forResource: "AboutText", withExtension: "rtf") {
 			var aboutTextScrollView = aboutField.enclosingScrollView!
 			aboutField.readRTFD(fromFile: aboutTextFile.path)
 			aboutField.drawsBackground = false
@@ -108,7 +106,6 @@ public class EnvironmentPref : NSPreferencePane {
 
 	@MainActor
 	private func loadEnvironmentFile(_ file: String, isMainFile: Bool) {
-		let myBundle = Bundle(for: type(of: self))
 		let fileManager = FileManager.default
 		var isDir: ObjCBool = false
 		
@@ -117,8 +114,8 @@ public class EnvironmentPref : NSPreferencePane {
 		if !fileManager.fileExists(atPath: envFile.path, isDirectory: &isDir) {
 			if !isMainFile {
 				let alert = NSAlert()
-				alert.messageText = NSLocalizedString("FileError", bundle: myBundle, comment: "File error")
-				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileDoesNotExist", bundle: myBundle, comment: "File does not exist, format string"), ENVIRONMENT_DIR, file)
+				alert.messageText = NSLocalizedString("FileError", bundle: bundle, comment: "File error")
+				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileDoesNotExist", bundle: bundle, comment: "File does not exist, format string"), ENVIRONMENT_DIR, file)
 				alert.beginSheetModal(for: prefWindow!) { response in
 					
 				}
@@ -131,16 +128,16 @@ public class EnvironmentPref : NSPreferencePane {
 			
 			if isDir.boolValue {
 				let alert = NSAlert()
-				alert.messageText = NSLocalizedString("FileError", bundle: myBundle, comment: "File error")
-				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileIsNotFile", bundle: myBundle, comment: "File error: Is not a file, format string"), ENVIRONMENT_DIR, file)
+				alert.messageText = NSLocalizedString("FileError", bundle: bundle, comment: "File error")
+				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileIsNotFile", bundle: bundle, comment: "File error: Is not a file, format string"), ENVIRONMENT_DIR, file)
 				alert.beginSheetModal(for: prefWindow!) { response in
 					
 				}
 				isError = true
 			} else if !fileManager.isReadableFile(atPath: envFile.path) {
 				let alert = NSAlert()
-				alert.messageText = NSLocalizedString("FileError", bundle: myBundle, comment: "File error")
-				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileIsNotReadable", bundle: myBundle, comment: "File error: Is not readable, format string"), ENVIRONMENT_DIR, file)
+				alert.messageText = NSLocalizedString("FileError", bundle: bundle, comment: "File error")
+				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileIsNotReadable", bundle: bundle, comment: "File error: Is not readable, format string"), ENVIRONMENT_DIR, file)
 				alert.beginSheetModal(for: prefWindow!) { response in
 					
 				}
@@ -170,7 +167,6 @@ public class EnvironmentPref : NSPreferencePane {
 	}
 	
 	@IBAction func save(_ sender: Any) {
-		let myBundle = Bundle(for: type(of: self))
 		guard prefWindow?.makeFirstResponder(prefWindow) ?? false else {
 			return
 		}
@@ -186,15 +182,15 @@ public class EnvironmentPref : NSPreferencePane {
 		
 		if fileManager.fileExists(atPath: envFile.path) && ((try? fileManager.copyItem(at: envFile, to: backupFile)) == nil) {
 			let alert = NSAlert()
-			alert.messageText = NSLocalizedString("BackupError", bundle: myBundle, comment: "Backup file error")
-			alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("BackupFileNotWritable", bundle: myBundle, comment: "Backup error unable to write, file, format string"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP)
+			alert.messageText = NSLocalizedString("BackupError", bundle: bundle, comment: "Backup file error")
+			alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("BackupFileNotWritable", bundle: bundle, comment: "Backup error unable to write, file, format string"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP)
 			alert.beginSheetModal(for: prefWindow!) { response in
 				
 			}
-		} else if !fileManager.isCreatableFile(at: envFile) {
+		} else if !isCreatableFile(at: envFile) {
 			let alert = NSAlert()
-			alert.messageText = NSLocalizedString("FileError", bundle: myBundle, comment: "File error")
-			alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileNotWritable", bundle: myBundle, comment: "File error: Can not write file"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP)
+			alert.messageText = NSLocalizedString("FileError", bundle: bundle, comment: "File error")
+			alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileNotWritable", bundle: bundle, comment: "File error: Can not write file"), ENVIRONMENT_DIR, ENVIRONMENT_BACKUP)
 			alert.beginSheetModal(for: prefWindow!) { response in
 				
 			}
@@ -223,27 +219,24 @@ public class EnvironmentPref : NSPreferencePane {
 	}
 }
 
-private extension FileManager {
-	func isCreatableFile(at path: URL) -> Bool {
-		if ((try? path.checkResourceIsReachable()) ?? false) {
-			
-			do {
-				let value = try path.resourceValues(forKeys: [.isWritableKey])
-				// Return if we can write onto the file
-				return value.isWritable ?? false
-			} catch {
-				return false
-			}
-			
-		}
+private func isCreatableFile(at path: URL) -> Bool {
+	if ((try? path.checkResourceIsReachable()) ?? false) {
 		
-		let superPath = path.deletingLastPathComponent()
-		// Return if we can write to the directory that we want the file
 		do {
-			let value = try superPath.resourceValues(forKeys: [.isWritableKey])
+			let value = try path.resourceValues(forKeys: [.isWritableKey])
+			// Return if we can write onto the file
 			return value.isWritable ?? false
 		} catch {
 			return false
 		}
+	}
+	
+	let superPath = path.deletingLastPathComponent()
+	// Return if we can write to the directory that we want the file
+	do {
+		let value = try superPath.resourceValues(forKeys: [.isWritableKey]).isWritable
+		return value ?? false
+	} catch {
+		return false
 	}
 }
