@@ -143,7 +143,7 @@ public class EnvironmentPref : NSPreferencePane {
 				}
 				isError = true
 			} else {
-				keyValueDataSource.dictionary = NSDictionary(contentsOfFile: envFile.path) as? [String: String] ?? [:]
+				keyValueDataSource.dictionary = NSDictionary(contentsOf: envFile) as? [String: String]
 				isDocumentDirty = !isMainFile
 			}
 			
@@ -156,17 +156,17 @@ public class EnvironmentPref : NSPreferencePane {
 		updateButtons(checkBackup: true)
 	}
 	
-	@IBAction func loadBackup(_ sender: Any) {
+	@IBAction func loadBackup(_ sender: Any?) {
 		keyValueDataSource.tableView.abortEditing()
 		loadEnvironmentFile(ENVIRONMENT_BACKUP, isMainFile: false)
 	}
 
-	@IBAction func revert(_ sender: Any) {
+	@IBAction func revert(_ sender: Any?) {
 		keyValueDataSource.tableView.abortEditing()
 		loadEnvironmentFile(ENVIRONMENT_FILE, isMainFile: true)
 	}
 	
-	@IBAction func save(_ sender: Any) {
+	@IBAction func save(_ sender: Any?) {
 		guard prefWindow?.makeFirstResponder(prefWindow) ?? false else {
 			return
 		}
@@ -201,7 +201,7 @@ public class EnvironmentPref : NSPreferencePane {
 		}
 	}
 	
-	@IBAction func showWebsite(_ sender: Any) {
+	@IBAction func showWebsite(_ sender: Any?) {
 		NSWorkspace.shared.open(URL(string: "http://www.rubicode.com/")!)
 	}
 	
