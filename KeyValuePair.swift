@@ -19,8 +19,4 @@ struct KeyValuePair: CustomStringConvertible {
 	var description: String {
         return "key:\(key), value:\(value)"
     }
-    
-    func compare(_ other: KeyValuePair) -> ComparisonResult {
-        return self.key.compare(other.key)
-    }
 }
