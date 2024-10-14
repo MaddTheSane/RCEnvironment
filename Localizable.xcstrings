@@ -319,7 +319,7 @@
       }
     },
     "FileDoesNotExist" : {
-      "comment" : "File does not exist format string, format string",
+      "comment" : "File does not exist, format string",
       "localizations" : {
         "de" : {
           "stringUnit" : {

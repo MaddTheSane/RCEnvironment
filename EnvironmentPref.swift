@@ -118,7 +118,7 @@ public class EnvironmentPref : NSPreferencePane {
 			if !isMainFile {
 				let alert = NSAlert()
 				alert.messageText = NSLocalizedString("FileError", bundle: myBundle, comment: "File error")
-				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileDoesNotExist", bundle: myBundle, comment: "File does not exist format string, format string"), ENVIRONMENT_DIR, file)
+				alert.informativeText = String.localizedStringWithFormat(NSLocalizedString("FileDoesNotExist", bundle: myBundle, comment: "File does not exist, format string"), ENVIRONMENT_DIR, file)
 				alert.beginSheetModal(for: prefWindow!) { response in
 					
 				}
